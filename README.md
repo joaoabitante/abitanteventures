@@ -42,3 +42,19 @@ Se for usar um domínio (ex.: `joaoabitante.com`):
 - **Contador de visualizações:** procure por `data-target="68358"` no `index.html` (aparece duas vezes) e troque o número.
 - **E-mail do formulário:** procure por `mailto:contbit@gmail.com` e ajuste se necessário.
 - **Trocar a foto:** a imagem está embutida em base64 dentro da tag `<img>` na seção "Sobre". Para trocar, gere o base64 da nova foto e substitua o conteúdo de `src`.
+
+## Segurança e privacidade
+
+Esta página foi endurecida para que **nenhum perfil de visitante possa ser montado a partir de metadados**:
+
+- **Zero requisições externas.** Fontes, foto, ícone e texturas estão embutidos no próprio arquivo. A página não chama Google Fonts nem qualquer CDN — portanto nenhum terceiro recebe IP, User-Agent ou Referer do visitante.
+- **Zero cookies / localStorage / sessionStorage.** Nada é gravado no navegador.
+- **Zero analytics, pixels, beacons ou fingerprinting.**
+- **Content-Security-Policy** restritiva no documento: `default-src 'none'` com `connect-src 'none'` — bloqueia qualquer tentativa de exfiltração de dados pela rede.
+- **Referrer-Policy: no-referrer** e todos os links externos com `rel="noopener noreferrer"` — ao clicar em WhatsApp/LinkedIn/projetos, o destino não descobre que o visitante veio deste site.
+- **Formulário de contato via `mailto:`** — abre o e-mail do próprio visitante; nenhum dado é enviado ou armazenado em servidor.
+- **`_headers`** (aplicado no Cloudflare Pages/Netlify) adiciona CSP completa, HSTS, X-Frame-Options, Permissions-Policy (com opt-out de `browsing-topics`/`interest-cohort`, as APIs de perfilamento do Google), COOP e CORP.
+
+### Importante sobre o host
+- O **GitHub Pages não permite cabeçalhos HTTP customizados**, então o arquivo `_headers` é ignorado lá. Nesse caso valem apenas o CSP e o referrer embutidos via `<meta>` (que já bloqueiam o essencial, pois a página não faz requisições externas). Para a proteção completa de cabeçalhos (HSTS, frame-ancestors, Permissions-Policy), publique no **Cloudflare Pages**, que respeita o `_headers`.
+- Qualquer host registra o **IP do visitante** nos logs de conexão (inerente à web). A página em si não entrega esse dado a terceiros; para minimizar, prefira Cloudflare Pages com Web Analytics sem cookies.
