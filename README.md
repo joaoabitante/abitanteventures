@@ -58,3 +58,9 @@ Esta página foi endurecida para que **nenhum perfil de visitante possa ser mont
 ### Importante sobre o host
 - O **GitHub Pages não permite cabeçalhos HTTP customizados**, então o arquivo `_headers` é ignorado lá. Nesse caso valem apenas o CSP e o referrer embutidos via `<meta>` (que já bloqueiam o essencial, pois a página não faz requisições externas). Para a proteção completa de cabeçalhos (HSTS, frame-ancestors, Permissions-Policy), publique no **Cloudflare Pages**, que respeita o `_headers`.
 - Qualquer host registra o **IP do visitante** nos logs de conexão (inerente à web). A página em si não entrega esse dado a terceiros; para minimizar, prefira Cloudflare Pages com Web Analytics sem cookies.
+
+## SEO e compartilhamento (atualização)
+- `og-image.png` (1200×630) é a imagem que aparece quando o link é compartilhado no WhatsApp, LinkedIn, X, etc. **Suba este arquivo junto** com o `index.html`, na raiz.
+- `sitemap.xml` ajuda os buscadores a indexar o site; já está referenciado no `robots.txt`.
+- O `<title>`, a descrição e o Schema.org (Person) usam o nome completo **João Carlos Bueno Abitante** (com `alternateName` "João Abitante") para o site ser encontrado em buscas pelo nome.
+- Após publicar, registre o domínio no **Google Search Console** e envie o `sitemap.xml` para acelerar a indexação pelo nome.
