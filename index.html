@@ -11,7 +11,7 @@
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="noimageindex">
 
-<title>João Carlos Bueno Abitante — João Abitante Ventures | Compliance, Bitcoin, IA e Impacto Social</title>
+<title>João Carlos Bueno Abitante — projetos, software e contabilidade | joao.abitante.net</title>
 <meta name="description" content="Portal oficial de João Carlos Bueno Abitante. Compliance, Bitcoin, Inteligência Artificial, Reforma Tributária, Neurodiversidade e Tecnologia.">
 <meta name="keywords" content="João Carlos Bueno Abitante, João Abitante, João Abitante Ventures, ContBit, Contador CRC-SP, Compliance, Bitcoin, Criptoativos, AML, KYC, PLD FT, Reforma Tributária, Inteligência Artificial, Autismo, Empreendedorismo, Blockchain">
 <meta name="author" content="João Carlos Bueno Abitante">
@@ -564,6 +564,22 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
   .rec-brand img{height:30px}
 }
 
+
+/* ========== UX hub 2026 ========== */
+.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+@media(max-width:900px){.paths-grid{grid-template-columns:1fr}}
+.paths-grid .card{min-height:100%;display:flex;flex-direction:column}
+.paths-grid .card .visit{margin-top:auto;padding-top:16px;display:inline-block;font-weight:700;color:var(--cyan,#38bdf8);text-decoration:none;font-size:.92rem}
+.paths-grid .card .visit:hover{text-decoration:underline}
+.rec-pull{font-size:1.12rem;line-height:1.55;color:#fff;font-weight:600;border-left:3px solid var(--cyan,#38bdf8);padding:12px 16px;margin:0 0 18px;background:rgba(56,189,248,.07);border-radius:0 12px 12px 0}
+.rec-letter.collapsed .body-more{display:none}
+.rec-letter .rec-toggle{margin-top:14px;background:transparent;border:1px solid rgba(120,160,255,.22);color:var(--cyan,#38bdf8);padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600;font-size:.88rem;font-family:inherit}
+.rec-toggle:hover{background:rgba(56,189,248,.08)}
+.hero .sub{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--txt-dim);margin-top:10px;font-weight:500}
+.hero .lead{max-width:44ch}
+.scroll-hint{margin-top:40px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-dim);opacity:.75}
+.card .visit{font-weight:650}
+
 </style>
 </head>
 <body>
@@ -578,13 +594,10 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
     <nav aria-label="Navegação principal">
       <ul>
         <li><a href="#inicio">Início</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#recomendacao">Confiança</a></li>
+        <li><a href="#como-ajudo">Como ajudo</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#recomendacao">Recomendação</a></li>
-        <li><a href="#ecossistema">Ecossistema</a></li>
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#conteudo">Conteúdo</a></li>
-        <li><a href="#estatisticas">Estatísticas</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
@@ -597,13 +610,10 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
 <div class="overlay" id="overlay"></div>
 <aside class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
   <a href="#inicio">Início</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#recomendacao">Confiança</a>
+  <a href="#como-ajudo">Como ajudo</a>
   <a href="#sobre">Sobre</a>
-  <a href="#recomendacao">Recomendação</a>
-  <a href="#ecossistema">Ecossistema</a>
-  <a href="#especialidades">Especialidades</a>
-  <a href="#conteudo">Conteúdo</a>
-  <a href="#estatisticas">Estatísticas</a>
-  <a href="#blog">Blog</a>
   <a href="#contato">Contato</a>
 </aside>
 
@@ -611,39 +621,168 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
 <section class="hero" id="inicio">
   <canvas id="particles" aria-hidden="true"></canvas>
   <div class="container">
-    <span class="eyebrow"><span class="dot"></span> Ecossistema de inovação financeira & tecnológica</span>
-    <h1>João Abitante <span class="grad-text">Ventures</span></h1>
-    <p class="sub">Compliance • Bitcoin • Inteligência Artificial • Impacto Social</p>
-    <p class="lead">Construindo soluções digitais para a nova economia, conectando contabilidade, regulação, tecnologia, criptoativos e inclusão.</p>
+    <span class="eyebrow"><span class="dot"></span> Contador · tax tech · cripto · impacto</span>
+    <h1>João Carlos Bueno <span class="grad-text">Abitante</span></h1>
+    <p class="sub">Ponto de entrada dos meus projetos</p>
+    <p class="lead">Da contabilidade ao software: ferramentas, consultoria e conteúdo para quem precisa decidir com clareza fiscal e tecnológica.</p>
     <div class="actions">
-      <a href="#ecossistema" class="btn btn-primary">Conhecer Projetos
+      <a href="#projetos" class="btn btn-primary">Ver projetos
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="https://wa.me/5511994105856" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.27l-.999 3.648 3.97-.617zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-        Falar no WhatsApp
+      <a href="https://wa.me/5511994105856" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Falar no WhatsApp</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">Role para explorar</div>
+  </div>
+</section>
+<section id="projetos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Hub de projetos</span>
+      <h2>O que você pode abrir agora</h2>
+      <p>Software, simuladores e iniciativas — cada card é uma porta de entrada.</p>
+    </div>
+    <div class="cards-grid">
+
+      <a class="card featured reveal" href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <span class="flag">Carro-chefe</span>
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <div class="cat">Para escritórios de contabilidade</div>
+        <h3>Contbit</h3>
+        <p>Software para o seu escritório — com a sua marca. Portal, automação e simuladores sob medida.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a href="https://www.linkedin.com/in/joaocarlos1" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        Ver LinkedIn
+
+      <a class="card reveal" href="https://hashrateconsultoria.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+        <div class="cat">Consultoria Estratégica</div>
+        <h3>Hash Rate Consultoria</h3>
+        <p>Consultoria financeira e contábil com foco em clareza e decisão.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
+
+      <a class="card reveal" href="https://autistaempreende.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="cat">Impacto Social</div>
+        <h3>Autista Empreende</h3>
+        <p>Iniciativa de impacto para o autista que empreende.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card reveal" href="https://mundo.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        <div class="cat">Global Tax Intelligence</div>
+        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
+        <h3>Mundial Tax</h3>
+        <p>Mapa-múndi interativo da tributação internacional.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card reveal" href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6M9 11h6M9 15h4"/><path d="M5 3h14a1 1 0 011 1v16a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/><circle cx="17.5" cy="6.5" r="3.5" fill="var(--bg)"/><path d="M16 6.5l1 1 2-2"/></svg></div>
+        <div class="cat">TaxTech · Elisão Fiscal</div>
+        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
+        <h3>A Hora da Elisão Fiscal</h3>
+        <p>Compare regimes e a Reforma — anônimo, no navegador. Para empresários e contadores.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card reveal" href="https://mei.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h4"/></svg></div>
+        <div class="cat">Simulador MEI · Inclusão</div>
+        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
+        <h3>Simulador Financeiro MEI</h3>
+        <p>Simule o dia a dia financeiro do MEI com objetividade.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card reveal" href="https://copa2026-9wy.pages.dev" target="_blank" rel="noopener noreferrer">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z"/></svg></div>
+        <div class="cat">Sports Analytics</div>
+        <h3>Copa 2026</h3>
+        <p>Experiência interativa da Copa — projeto de produto e conteúdo.</p>
+        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
     </div>
   </div>
-  <div class="scroll-hint"><div class="mouse"></div>Role para explorar</div>
 </section>
-
-<!-- ============ SOBRE ============ -->
+<section id="recomendacao" aria-labelledby="rec-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Confiança</span>
+      <h2 id="rec-title">Quem já trabalhou comigo</h2>
+      <p>Depoimento sobre assessoria contábil e gestão financeira ao longo de uma década.</p>
+    </div>
+    <div class="rec-wrap">
+      <article class="rec-letter collapsed reveal" itemscope itemtype="https://schema.org/Review">
+        <meta itemprop="datePublished" content="2026-06-24" />
+        <div class="rec-top">
+          <div class="rec-meta">
+            <span class="place">São Paulo, 24 de junho de 2026</span>
+            <span class="seal" aria-hidden="true">● Recomendação</span>
+          </div>
+          <div class="rec-brand" title="Foxbit Group">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+oAAAGECAMAAACWISrjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEsUExURQAAAP+AAP9wAGBgYP94AP9wAGBgYP91AP9wAGBgYP90AP9wAGBgYP92AP9zAP9wAGBgYP9zAP9uAGFhYf91AP9wAGBgYP91AP9uAGBgYP90AP9wAGBgYP90AP9uAGBgYP90AP9wAGBgYP92AP90AP9wAP9vAGBgYP91AP9zAP9wAGBgYP91AP9zAP9wAP9vAGBgYP90AP9wAGBgYP91AP9wAP9vAGBgYP90AP9wAGBgYP90AP9wAP9vAGBgYP91AP90AP9wAP9vAGBgYP91AP9wAP9vAGBgYP90AP9vAGBgYP/////27//t3//kz//bv//SsP/Sr//JoP/Jn//AkP/Aj/+3gP+3f/+ucP+ub/+lYP+lX/+cUP+TQP+KMP+BIP94EP90AP9vAGBgYEaoJK4AAABLdFJOUwAQEBAgICAwMDBAQEBQUFBQX19fYGBgb29vcHBwf39/gICAj4+Pj4+QkJCQn5+fn5+goKCvr6+vsLCwv7+/v8/Pz8/P39/f3+/v70xOw+kAADL9SURBVHja7NrNitswFIZhYzAUvMgqUAgMZJFZ1rvstJmFQBwrwuMk47qRLc79X0QHSukPsuLEf5nhe+7h5RwdFD2eOEnXm22WCSGlVPyblFKIfbbdrtM0iQDgw0pWm91eKu5Div12lcYRAHwgyWqbSb6DErtNGgHAw0tWO6F4mJds8yUCgEeVbDLJI1Fii30eYCHhzBWPTWyxzQM8kHQneSJqv8Z9HuABxOtM8bTEBrUDLCpeC8VzeEHtAItJheL5vGCTB1hAulM8N7GOAGBG8UbwImSG0Q7w7tMOdIx2gJmlghcmnzHaAaYVPynur23sO54A9niARwjd2epUaPrlwlf8MO+Kc2Ub7i/DRzqAJUN3tio1/cNw0In+OBRn67gfgdgBlgndXU6GPDikof/porKIHcBr+dDtm6EOHGLJy5wsYgfwWDJ0V5c5EQ1I3ctUDQ50ALP5qjjEVYY8+qceokuL2AHmkIrrnQ9NfWDtTxEADJMIDrAmJxoh9aG1S/ygA5jskd685eQxIPUQXbccsMcWD3C3VIYGOvWlOaShvooLtniA8cXfuIvrPdBJF2XDQZpC+o92uYoA4GYrxR3aPqHnh/JYX1ruwdbnY2EOOfVRtrjFA8xxjrMlheXmWDeO79DaS1Xo67HjPAcw9Ui3hkLysmp4IHc5GgoyFoMdYARxdk/oualaHomzx8N9sUt8lQUYeHhvS+qkj9bxuNq6CK7xOMUDDPLcdXWnLvpseRqX1/z22CWWeIC773GdV/fc0/m4tVOXt5a9FK5zAFekin2s7jrDWZ6cqw356Zr9niMACHhin9aQl6kcz6N91eSlWyzxALeKBft8zwNX8NnUmrxOLS7xADdJJHvYg/+F7nhu9rVji8clHmDotxl3or/8ZO+MehvHsSxMRIgQIwLK2EIENMqYIH7YAAmwZXQwY3SjoocyOkJkye7EjuN2xZZA/f//sNju2XHbIa8lHVKhZJ7XmbIdNj/dw8NLCgUd9/GSLN4u2K2soGX6JkFA1w87Xdi/2wW7lVWh3fRXAPR6YZ+lNpyzsqoYyKVTAPS6YU+EIeHjGbOyshIFcnTwDoCuHfZXLtIXZmVlJSCdyuOmKTdFb4IQYZLaIN7KitCZgPQ0ISyyEVqJfqFl3cpKTrpgk+1HjC7SP8bFv1rWraxKbKe/muzdyc78WSa6r4JZWR29/kuwTJ++K+lLbqYWgqZ4y7qVVSHS06QRJV32Y5ONZd3KqgDpm6QpJV1W2JeWdSsrEel0IDcxt6TLVuyvlnUrq51ErkAgN+fGK322rFtZkbtsB0mP17wJWr4L4u1BNysrgvSXppl3aTo3yez+upWVrBt2tm/eM94UpU/vNt0s61ZWQtKzfVrMTt4PJfFJas++WFmxk/ekTxq5TN9qGR9m3b6s1erYdH+I9KQpy3R5R0CS2vPrVseu/z5E+qQ5y3R5OJek9l4aq+PWP/i+9kh/biLphazJwwmzsjoWfTqUvS94UzU/yPq/mJXVkej08R3pTY7eySA+Se2Wm9Wx6vSB7pGL33iTtc96xvf1X8zK6hj0rwOkb3iztTgUMD7aaM7qGPSPd6Q3fZNtX6u9fngbzVkdo95Fcm9tI/0d6y+mRnOO63V9Sh6z2pP7H3W8/1fXd5nVwYV6GreO9Hesv5rXIet0r4dhfkgDZrWrXCyfWe3r+z7pSQtJf8f6D76vM/aB8i6DvJC6zMqirmahnrWT9H3W4405y3WnF+RF5TAri3olnfM9vbSUdM6XggjCgEtpnMsoL6yAWVnU1SzUX1tL+v6e2wRYrmsEnVaPWVnUK+l/qPA9bhfp+6y/GLC7/lOUl5IN4C3q1XRBRnJN75x5r2e62/ee1Ss3yMspYlYWdSX2fYf0FW+fpjusbz7Wwn+O8pL6lVlZ1FXY95d2nGXbEbm/kH2khb/O5bLz16Ku076vWk/6/hLl6eMsvBPk5WVbwCzqgH0XU/DEW6pNTCzX67Pw7igvrxGzsqgD9l107UzSzDtnSrfSxJuPsfBumFfQLbOyqOOnXF7bu6G+qzm5XL83l3S71WZRr6R9+z7+m5p2C3Q5Tcnd9XOmXc6ue7ddsRZ1VmPve9L+SE4cza3r74Uf5H+T7Yq1qGvVKbHPNuMt15q08FdMsy7zrWxXrEW93kxucywLdcHJl5eakzkvr6gOs7Kol9Unwr63n3TOp5SFvzcgkhMoZFYWdTSTez2ehbqgay7J8GQOX6jbC2gs6vr75NJj6J0hlusvNZb1Tv6XbFesRZ3VX9STo1qo/6U5ZeEvmDb9277brliLOiFdG22rlh9nO2zhp7VtuPn5n7JdsRZ1Qrqa39Ok0D7bH/F41rCSn75MV8Us/BLYcFNa1KOg59nybVHXs9E2k9h30Xr+lTdH2Wu8kzJSFj7O+I4eTz6kqAc92xDXQtSdw/NiIJajtHsmldh38VVUSWMc/jr56wcXs/Av9ZT1UU4otD3ubUPd8QdBEOb5aOCT1N4R+Yy6oj4R2HfC7zbExadTwTKcsvBrsKzj8futregtQ90L8q2igQuhjhf1ldy+C2L6hrj47DUukjPOiWTuquY99cguLluGeifIdxVdIqjjRT3Zs+/0davNcPHrpFjvXxbXXNZDOem267VlqIsuAx46AOoKi/qkQNNJE1x8OiWKtXybMdFf1j3b3340qF/mIo0cAHVsTz0V1D/SwRvv4rfeXeBUyF74lfayfmsPrR0L6pdEd0RNqJ88yJrfZ4VemGC6i99690LPrw2x4fZFff5u29uPBHU/l+m6NtQvZEU9SQu1jZvt4rfefevfac3lB32+M8VycolC2zTTLtSp04teXagLirrAvhIO3mAXn23/nMJ/VRbLy/p5XUv1PrNqFeqDXK4ARB0v6kVfeWaui39Lxu+UlvqjFnoPuPVkRd1uqLcLdTen5NWD+j1V1As5eFNd/Na7E/6d6pnTX9bv7Er9OFAf5JRua0H9VFbUJ5wQ4eABF6/Pu5d7gK3kZf2GKVVg73w+DtTDnFJUGnW8fWYp6R+hzS7g4nV6d6HSkg+wWOt+W2gvkjoK1Ds5LbcG1E8fJXN8WuLqFtDF6/futH+n/6qVzv22yL5e9ShQ7+a0ujWgfiFzrinngIMHXLwO7077d7qPZqozmLP5+3Gg3s9p+TWg/l3C7e+cEOHgTXDxq3gsVVrerKz3grl2T8o2yLxRvctp9fWjfra7viVW6iQUJrn4zbYiC/07WtZv2j0p2yCL+sFQbkogUcDBP8cf7+Kzl/G+JtMK9+S9Scv640mrJ2Ub1DwD3yuFOt4plxJFvYiDX6TPgIvX5N3jJSfO7xTKIOZ8RxetnpRtkHmj2stpedpR/yS5US6pdH36VLDFhbl43LvPM74ZVzErS2kbzX2rJ2UbZN6oeio323D/niXV7oNOdmrmAsjilXv36XoLbcm/K4ull8eetHlStkHmjaoT5ZRCphv1E8lOW8LLaLHbWQa4eOXeff+mvLTMnyU1A1/aPCnbIANHNcgpDbSjfiEJ5cqBud5HYvUBLn4t8u77CcS0lEmQBnP3rZ6ULRA4qvU7eFc76v+UhHIlsZzu/kPAxSv17luzUu0R9iQN5k7aPClbIBNHNSCLum7UTyQ3Msw4Rxx8/S7+D4F3F+2Qp+WMgjSY+9LqSdl8YaNaf1l3taN+IUnX1rycUoFDxl087t0J/15IU6mDb/WkbL6MHNVbon+mFOpw/r7eCeVAB4+7eNy7o/6d86X0KXHS6knZeBk5qs4oF2vI9KP+KNhU3xIBOHjExePefSUrzWU9RRbLHPxFqydl42XmqDrhh10OfU7sjkMOHnXxuHffKqP9O60nmSP4pd2TsukydFSFdf2ujlc+3BA7ZpiDB1w86t03fCvAv28HRTgqjy2flA2XsaPaz/cU9cq/yAk9vzoXEAE4+K3SJ8LFK/buyRtVmCu4CamDP2/7pGy0zB1VdxfgSq9nRC+Vm+wQATp4wMUj3n2RCWCF3Mpc5gluWj8pmyyTR9W9/beNj4JeXS9dviBZxR38Vhnh4hV691R4FhVyK2vZm27uj2BSNleGj6rT8TyPIBZFnW6VWxFEAA4ecPGId99qtuPfIQfPd3RyFJOyoWrFqCpE/YGoyqiDL+fice8eLzIuVAK6lbmsi+bCTkpz1YpRJVCHrpqKASKKPSvS+VibpilhwCG3spZdCH9jJ6W5asWoqkP9Qjyjl5zDDl6idDLWomTNBYL9Ox3rfbeT0ly1YlTVof5PsU/dcK7CwRMuHpTEuwP+ndTfGv6y3cW6nZTGqhWjSqOOL9UTztU4eMDFI94d9+/yFpzd4O+TnZTGqhWjSqAO7Kpngi0lxMETShOlJX1Nh2qwf+eZ7ND6jZ2UxqoVo0qgDlwguQaKX8md+XSqvKij/p3WRPK+yns7KY1VK0ZVGeo34oqccqUOnu58wUXv2G1w/875XLJYf7ST0li1YlSVoX5PLNV1OfjsNR4TUg77EvfvnL/JFuundlKaqlaMKoE6cFY9JpbqgIMnWtyUKnklvDfxBjpssX5hJ6WpasWoqkL9TGB0KZ+LO/h1MtanZEU8e8C/ayJ5hN3YSWmqWjGqqlD/JPaoG67Jwa+noh3xVTUtk0KwrwSrbGixHu/mcnZSmqpWjKoq1K+EkznmXIuDT6fAW1qL9uJM1gKXAfl3+p3zj3ZSmqpWjKoUdaRXbipAVKGDz2aiXTLAQBDHZ9T6d/pzTpo9KR3X832/3+/3fN/zXNYiWdRlN9DEgtwJdfB07D5dc1TpgnIKuH/fKpbkcudNnZRutz8YRfmeRsF1t8Naocqj6nb8/mAYjMIwHAXB4LonGZEmoS7OmN+4cgevHHT6Qtrxa6rQv9Mf9KWJqLu9QZjLFQV9r+wnknKU+A9aSkbV9a+DKBdoNOztD0mTUD8T98ptuGIH/yYK0LAHStHbpzOB70ZzuYSI4JWiPvCLqHTF8a7D/LCigV8G0Fv6w1zdrzbM+zDqjj8Ic1JBr8Ngeb5Q3XKo/+QX0Pa/4Lm404RzZQ5eGrsvOaCC19uo8+/UJ/2iAnVE/XIT7TLKC2vQVUViCNf1y5zULeiVnF6QF1F43dFTp0PZ/xvRf4zIF2HVmnCuzMHL9tcyrlhriXF4UuXf+WYstj0PDULd8YO8nMJLF3mVwVaBXtJHDELdKzMuI99tHOo3AtstYAJw8OsZADoexj+lsQr/Ti8FGoO6U7igS64upuXSn37NEHVzUqFbAnV8XKKB2zDU74XtYAuOajkmNCdAh2EnBH9tIukNOm0G6sSEVgS7l5PqITFiVD4KoFHHH4CNQn1nrw0uf1tl5KEUjVrIYce9ypPkOP95E1AHQC8+sXs5Ka866WFOqssqoI4/ABuE+qMQzzVX5ODx/TV8m13hA2wuaQO8aADqXpiDuvzIGH50aASqoY4/AJuC+ol4ry3lsJYA6PDOmyb/zpeS3bYvxqPuBjmusEhRHmqJ4a8Phe8VUfdDdEz8hqB+Jj7sooK3MdWcrh922r/ju227G+umo/5TlCvRtQPH8DWF7zTqKh+AgdsI1MXb6gnHtQZe4gKIOFcz47A2kgMvX81GHZjRRM5NrKpVx/A/lf9RNOpKH4BRrwmofxL2vUw5rhmwvwZK0p8X4z8glWysfzMa9S4xo3Ws2DuR4hi+UyF8p1FX/AAcuOajvtNB80xYXTSBx0HHd96WHJbkzqkHk1G/ztVqeNDE+3AMj4fvNOqCmBI0O8ajfiXcSporwAx/3Squ171MkMNKxHH+o7moE7VL37zuq4zhnbDaH0+jfpkrVdQzHfWfhftjCw17bS+8dr2oj+Ankh4aY1EXVERcYaf4XMZj+GGl8J1G3RnkqnXZJNQn6pxuOgZTMaVpgbpH2FTyWSeGok6schFFnxktZwTF8Hj4To/q5ShXr0uzUb8XutOVQv+Os46Trm5n4Vny15yaifrnKNekz2AMrz58x0cVDzEag3qsrlluMkZZx0kXaK0L9TMjUf+c69PnemL4Tg4t+/NaNXINRl3cAr9W7N/rZz0T9uXieeNCkvGdG4A6QDrAOhbD4+G7SajnoWsu6r/RqOMldfIhrGeTsVBxdkSoe7lefUZjeJz0PjCqWhQ6jUA9E3SCwXtSbyuQdZz0ZKXOwS8lr2i8MAB1wkHrUUd7DD8CwndgVAGNHFNRfxS67lRZU2zCOcg6TnqaxYJajMaNieGoq9llQwozHsNfA+G7CtTD/1OUl9LAVNS5FtRnO2TXzXqa7JK++w7VI0HdKUF6OLz98wb4rt/rD4IIsKtqY/hLYGGMjWoU3Pod9z9j6XX7xYfl8qhQj3c6xfdYn2T1kr579GbZMNSjsIh6bF+DonO613H2Ae3ejvJiCrCbYy7BC6YA1MvfCdvpBUCGoQP1sJCKoo7zgLGOk76XHUwbhroP3bhIK7r1HBmjfjHar7H74Lr0YwKP8Ctw7jDGoFGJXAB1DffA60T9aaeGIqzjpO8H5+PNMaDeKTipKbl3BGuFgesVpgIP33HUA+/gyN4VWdccC+qp4FA3wDpI+v5PWhwB6m4ITOqt3H6IT+vbai7cGakgnWk4iuoehv36WFBf7bhlgHWU9Ekm6F2PjwD1AQr6Fvb8kIbYeyBGVPiON9EDFV0ud3jQ6xwJ6lPhQc+3GGAdIX3/prt161H3c1rRzoeiNayLnUG9BsN3WpoOofrhIa9jNupcgDrs37faaGd9IyWdZ9svn7cddScscSoDn9aRA8bw2BkXWsD9cNAT8No81B/Vo74QbKFrZJ3+fJGDz5SgPjEW9UvFF6G5I3Bl6pW1BZ1y/hhHvcdKq4/8xPpRp3vg8aZYmsVUJ+nPmfRWy5WaHnhTUXeBgghMaySGh8J3HPXIYxXUCUmbYDbqiQB1qCmWpjFJNZLOt9p38NMmHXcpj/oAb9GmWaWnNR7DO+pIZ8BxNHCfo9sM1FeKmmJrZP0HTTrQHCv5lN8NRZ00v3esovzCZR2P4Ydw+L4VQDrIemga6t+F90mslPj3Na+P9R9jAekyB79QcjWFoagHAOmEOhFNHxjDA+E7KYB0lHXfMNTvVV8j+Ub4d5J1nHQiY1fWHPsk+ZJTU1D3KpOOtLh6aFfPpR7SGUA6ynpoGOo/C0vWXIV/X3CAdYT0BbHM3voN+BpJM1EfUjYZko+Z6k6xMyIecEZeILhfHdhI9A1GfY4fNM0Em+raWX8tQjpPVdw7NZHk+MwQ1F2gfiE5vIcu96OOAB18Vwzo/4FdVGAW6jfUi5zwplicdZx0ojkWOZ77ZiTqA6B+IY4hgLfsQhfYZpMqBz4P3pzwjEL9SshpoqgpFmcdJ11pc2wm+YgHQ1B3kXoIZWtOwQsZ6H3AEdBvLxQQ5uM5aGAU6hfCSC1W3BRLd7AmqXbS6a11/E2s3wxB3afuQcLlYfXRoUkesGugs1wsZKGOL9cdk1D/JAY1g/3776XOmmojHWmOpXfsuImoj7CFOtAKEyo4XBuoD8uRhT9u4fsmoX4mtqcbtW8vxFnHSVdy79RKstz/agbqLp0G43IiIJhDb7HtAKNKgKXRwgcmoX4qDp1WqL9Nyt4hgZJO/2raweN9sVdmoN4DZjW6QrgF/j0hsAZDzQD4usY1CHUm3kpa4E2xdbA+I0knm2NTqINmf4HyxQzUR8CsRitYhO7YaQnLyWhA/6D0TUL9N2EPzQxvigVYV0863RyLv3P53AjUXcJIqpIHFEnkpuMhU426W8OgBCahfi/0pxP8UBvAOkI6rQTcWo8lX3dmBOo+QaEyBZTBBmJ4IHwnhG204YPiGIT6z8LUKQb9+7xgyIWwPiPfJKGlOXYj++cnRqA+BDpi8TwgAPrGtXWqYyt1vKz7BqF+JZ7KKVbz0irva01S4AWMb5yQqubYteQg7CMzAvUI+Aw8hI8cYCMaCN9JYfE7npLcGoT6hXi37Q2+jKmwn94q3pQlXYSexq31hcT/fzMC9Q4UmOF76x5ySE7TBjie8mFpY2gQ6mdi9hZYU2zh098E66VInxR+kyryNHuS7LX9YgTqPhQ142a1B4KhA0silFMqh1ism4L6iZi937Gm2BLg0azTpJe349kY2VqfSL7vygjUb6HTW/g6YQD8VCB8JwUe6MWDOc8c1NlvQvZiqCm2zNOBZp2O7iuU6Clw71Qmy/s/aUQdn22M1ePgQ4AMIHwnBTT8qHHwPYNQvxfnTil0lLuoYoL1AqQT2Opojl3L3vx2ZgTqEbirBC+1HeSQnJ7ufTBXwJc1A4NQv1GUy6VVtqyfxwTrNOn0Uh1vjqW36viOmAmou3imBaxLiamHxfAdbFQxp4Mva0YGoX4hzuXmvKTm1BY3vVinWadJp38t3Ry7VpTKfTcCda+uAsZCFaGAVzR8hwQu1fElSWQQ6mfiMjsFmmJL9aTQrNOkEx5ER3NsInm0/GIE6j5hq9XqTgmWvWLhOyY0QcQTDMcc1E84lcvhTbG0YiHrbwVJr5QsxFWbY1PZo+WLEaj3wQKGQ3oLwEGE74jghxL8pHXNQZ39Ji6zG+BQWxlPLNQPinRgqQ41x77JUrlznaij5ARMubqKamUAhO/YqHr1DYpnEOo/i2vesqq5TTkHFusk65t4LNSsYnGelUsjZHbgxAjUhyB/eFteANxVp+nqHDjrg1NR3yDUv4j3nX+vWPEmVfev5gLWKdKTqcBP62yOnQCpHIA6WCP7+mY1jTp+8CXCiSQgUSynAaifie1tXDGcXlW+bXkhYJ0gPZ1UbAJYVttaz2R53lejUe8x9ZJVYaCoayrr8F4bHgsYhDp7FJfZNdAUW6XEzrmAdYL0lDASOppj32Rr/AujUfeNRf06P6iR0xzUI8JVmYL6vbjFZAG86aFKiZ1wkvUfu0Fcxt+IJbeO5tiZ7F+dmYF62DDUL/MCum4O6mEDUL8SczCtBM8KOAIuYF1OOp8RS3Vwa73U6x0fmUWdRh05yXppUVeI+rlkLyqr4N/poItuVF1zAesS0onMv9R3Tkr8jVADjX7UR41CvXBjbLcpqOcNQP1EUvJWFVz4jNOiF+vvWH/lf+mP8d81zbboEbiqbY5dyf7NF2bX6jTq0K1TkWtRV4Y6uxdn4rMqTbHQ1eoC1gXXvT/voTcDXgI/nldY4PMdnZmNep8pl4Nvto3KHGK1m23K/oorcRt8XKGTPVlVPxkaZyLWxaQjS/V0Nt4qRmP7B2YA6sSEuDWxheY6L6GgES00nUagfi5xqusy2fQWduDlpiLWRaQDS/X19teW+SPfZJvxXw1H/VemXF4OftVlXkrX+kcVl9eAxljG2KOYvXlx/w7APt0yJOyWnQqPq6bVjtesp+M9TUs/ztJ3u+omH3cJazzu0phrJHv1DUrHLNT/KWYvLm7BAdjn76lbjWVavP+/zADQiz8pYtk/OGWMmXyINarvvGZf2+XQnj3Eqgj1L5I8fV3Sgm+VvKblM7KYH2J9AXTibkHf0RQL8r4zU1DvgutS/ERaFwjfoRge3yvANTL/aor3221Z2YK5GAuUzNIKi3Wa9YXwJB0C+jhOy/r39fvLYo/rwimG1V4jXuTkqA/gzb9wSrDdNi3bEJM+j0UqCPtEEHgJWV8IX+8Mgb7Iyj6OEmCrDUDdILPqQfxc5pUUqEW9W1tUaRrqVxIHv+QFlc6TyrDPhbdKrwjSyy7VV8lYpIQGXfxjZsBWG4A6bCH1r0pHIOm0rs2+HJrIL8xC/VTSODrlhZUuCNgLL9YJ1hcVD81mSzHoZbLDqcy/fzUI9Ts804Ic+K9A8SugnkrUw9qu1tSLOu7giYVw6eL5tC7ujjdy1pfV3gSZvcZjkaalzuhK/fu5Qaj3oGAcf4t7H4jkdMXw2IfhDTS5qxV13MGvBaUUgP0QVomE55Xg9enEUh0BndaM8O/moO7ltTj4PkEPdhnFXaT8ooq8Jgc/aMDrGYUOnseCYA6BPVlVukJ+JSKdPl+Dg073CKVC/272S5c9tVa1eio3PJC8eUVjeBz1yKllUH7VjDru4BfA+0pXk7Kwr6Qd6SsB6eRSHQedDuUmgH/XjnoApddoq1sARnKhe/Bu+CEwqlp7Y33iW2pCHXfwU15e6ykFO31dleiWqXgt711LAdArhHIrwL9rR71XxxuGg8qW+KcC9vxW8UUV2O4dPiiugaifyGb3mlfQ+lkMe0YYZHGR3sTbt70UX6qnsxjY6d9TKn23xI1ZqHdy/cGcWzno6hQK3YKc1GdgVPUtazwi6DcPdXYv2QB74nsCumpk/bLPxNJ7k2z4vpb0+503syL9Mngox0/NQp2FQF8pmD/lIRa+94sld1FHGepBHU7HSNQ/ye5kyrhS2GcptRhOgKvsgMY4Sqn0xOs3ZhDqpP0daK9f+QAK37e+w1Uaw+d1lHWf+AoTUT95lARzC04I6JcF7paOBRvxAOi0XqWb6hemoe5pn9Zh1W8YFs7bPJX3RSOBPj4oITMSdXazW9bJmyHhflkpuyvgVZAA6IQSWSj3eGIa6iwE3Wr1ZC2EwneHSBchh4K+5hXr9R2oQf1WdSP/uWD9TJR1pf2yz9R1GNRSXTvofCUt6l+Zcaj3gbZS7KT5AAvft1Ibw+ekOnqDytxVg3pf+X/Te+LON0JAv6wA3qT8Up0GPVlxSAkRyhmHuqN3WofUrCbkFiZOdQwP9OTggxIwNaj3lCcwn2RALTgtvF82LfW+FVHP/EoM+vQN/enSnbZvzDzUWQBMa6QFJgDC953ipDiGB47L4Tdi+opQ95V3PJ88AmUd6Jfde0tjlaX6KiH6ZTQV9QsTUfeI6AsPmuXyVYTvTH0MDx+XA/qCQqYI9Y76sPUKKOsg7E8lFuuL7VIdaIxDi/oDMw912vtewgv1aqHcddHwXUMMDx+XA/qCfFWoO8TYKS/rKSeE9svuvaWxzFIdAB0t6l/MRN1D8qzKLtxXEr6XiOGvVaEedbQ9/lxVqLNQfcfzzzKmZpwU3i+7IRbrxFJdM+j8VVrU+amZqJOR1meI9GpFvVvRiveVxPA5LZpIbFD6TBnqQ/WtUefSW58JctT0y8bir6KX6tkr1eqOK5UX9a/MUNQ9AJCqyZpP1b2q211DFa9tzA8r7Oh5/LnqUO9pWH/cy8r6lHOtsMfiy5fp0+2xEPR4nnJFmhFF3VTUWaCB9U5IwqIifC8dw7uKUM+jLqskL6L/NHWoe8T6x9yyvoVdpmnhpTrdL4MrHRNF3VjUPfXbS5+jvGJRHwHtam6Ib4pjL3FH2oKYQtQZ0bqkvqwnGVcJe0LASn9TVhR0XE9EUTcXdXanem16nZMaVP2Xt4xWJ4Lvi86LaVC6ODoHBsVXivqdap9GlvUFp4T3yxY1EOu6QOcrqqgbjLpDExKV/Eh3lNNygfCdlg/H8Dkh5AHYCYFGfQJ1YF8FLevPxIab2o32og+VOQW6UiVEUTcZddbLaQ1KzGvnMspp9aHwnVYfbYDJC+vSKTMopV48haPOIqozwVVS1rO4bDKHwz4tsFSnb7hRvtE23y/qRqPOAmWLUy88WA+J8B2P1e7ABpi8uMLCQ90NSzbh4aj3yV/eVVLWF4IjnHphp/1DKn46oL+N/qJkv6gbjrobqZnXXgC8OHGbqgF/mDMCqieBut5BGTLVqDuHfRpe1hMiL9MEe7LhMq1jol9Gm31f7Rd1w1FnfoF5fekeoMwP8sPq4eG7zhg+z9XC7vQCbOFPo17dqAW+A5f19Zi4Zk5Xv+ySi/WHJtDpb0r4rk6NR53d5gU0JD7cu44KRdd4+K41hs/LKhp48KB0mXrUvfygguueJ5JLlHXp4viNE1LaL/tKLZ/1g87TeLzVZr+om4/6jvElae8IKqk/iNB3IdPB1YgRUhnD5xUUDroCOpzCg9JnAOrEP6mqQeFO+DQmLLy2rpoX/k7ZjABdsabyjbaH0wagXuLtaNGf1cD9U52ufz0k/mXhpbIHOFyVMXxeUeGw73sd98+RdL1SgzJkAOpA/iJVWPiAG18S4bg+2J8yvqt0Mt7TbM016Q8ik7tiTUCdML7q5BEPGiBMUxjD57UrdADUgSceIWK4r+Qlbsn1wi5HLE32cvpZqu+njOWZ3ANrBurMz3WrV7F9vat2NRK69aIOGBYAdXJQK3funTzwHW2IjTCVypZy1jfxXnCXcUJ4+i49P3/RFNSBMoCuSYdw+A7E8ADqGknHUWcdDYt19kl27wvdC49rk+wU7m0M+CMeC/4XTXody/vkvrHGoA6wjpF+CYTvlRaqQ1NQj1ymD3XWAxbrRTfc+ITIy1BRNv11Cx+x8a5Yb1SX7mmDUAdYR0j/CQjfiR5bSpdmoB51mE7U2RBYrJOvW5fY52X9rL8Qq3gNv4DYUr9hTUKd9T+A9E55h4v/JZ8B1PW6dxx1fLnu0zdKSlP4eMN1KnvaTdkznu312EwyrlMJ0aP7cNIs1FmvNtLx8J3WbaV6mot1F2okHUedHFx8sU4nc3xKLNcVa7EL9noven/mWvVKde1dsIahzrqRDqPqMyB8r6hKMbzsSeWOctUauQxHHWW9yueeE+1jU14H6/QRV5076tLbM7+yxqFeenIAt7GB4TvmXkdOGdQFLgHU0GE46rr+c7qM0g1xJcQL16vlWKol16oNlQk8nDYQdeYGNZavS4B0MIYflEOd9aJ6VjQ46jjrPitl4ecAcMCmG7DJhoaC63f2vYmoqw7nbivftxYwTF6ZGJ5GXbHfiTxWF+rMHQGL9WIWnk8JCnQxR2yyaVCWUEuFr6yhqDMvVGfePcaA8F1ryPi5OOpqn4GBy3Sijj+6Q0brhsAvTj+A9UT3lz5Rl+E8nDYWdebe1bEidUOAdA0xPI26ssIe9RirFXXmh/hinbbwawA7YNON2GRTq1fyuXLBmov69pIksKQDuVmHKVBQ2DfQqAPUACUdQB18dPuspIVfAqzDQfwzr5P08eadfW806oz1I7R69R3gDmmi9GmJ4WnUCWqAp58u1PHCPmAlLTyfA0UWZH3BNesPMul/OG066sCkJu4vA8J3HTH8dUHUiXFBvDuOOgx71U/+zvc0qZX1pQA9XfpB796fscajDk3qwIO61IcMEBDDk6jT44LbHBx1Wv4IXqxvdfpIpWUzrlubhNhkU6oNfT/1FWsD6lUndTToYNU2JJhQHMN3S6C+lVu+VXbUcxjTjjotj/jZZefRBXHpGsG64iA+2WgnPSYjuW+sJagz5vohULzw8F17DO+WQn0rPwBcjk7UaXm3I2CxTi7X1+PaWU/SDyb94bQ9qP9ZCyLgBlWhRkD4rjqGd4qgLpJb1BEHQEEHUJfJ8Xq3wSgCF+vs5N1yfVUv63z9ltVBOnV075zplyeWw7SoexcW49wpONkogaTT30ZfhtwXy5N7nmGUk4oIzgurAwyUPp0+ksH4JOON15Z08RXYV6yN6vTIWR0Nex47Snm9oaS6hy0fk3NOs57yhutHTB+o+cpaq063P3zn/KLwf9m7u+aksTiO44cKoiB2nQk4U+xMY3vhIK1rh+pFWGk7iGRPQpZCKTKkSf7v/0Ws7vpAk5OTUEh5yO9zywVe+PU8cvz4tvKYpdqjZ5XXHz99+ftH4l8+/fm28vQR23ZVeevmhrf+NeJHsp0dtuUePX32R6Xy6vWrSqXy7PH2/4WGUDXyu9qe1m+iSs8xgJTYuZS3bkxpY11HlE5PGEBq5Dry1vkNbSbXiiq9ygBSJKdHtH5Nm8gx/aWnY/MdIFSRAoZ80xfsUyOq9BoDSJly1I9MTZs2zA2PKv2SAaSOKmp9gxfsrhUoPX3HbAACauTLrv0NmsQHHqocE47ZAEKO18k2NnQS/5XfZUxQOsBPp6I97E2cxDtW4ClalA4gb73HN24nfmr4S3dQOkBE6zTkmzWwu9fcx3LJT8clOUg3UesjvkkDu21ynyGhdIA4rdvmxgzswSHdGFNAB6UDiFp3zOA211qaGDz4J8U6HUCkFuv/SR44tHYci/tZLkoHCKGSwCQwsI9pvbg3PGBMKB0glBpvyDQntEa+GtxHfOPnEqUD/FQlkRH3sxxaE7bFA/ouBTVx7x3gt12dxLtz67lkF4VujEnglAHAjFxHMrCvMHbJ0kIw4cBLFAD3bN0x1y12e8DDhnS8LgUQbecDCY34OsVuWzxkSMfFGYCYVBJy+qK4bBJKPnTxkI5DNoD4yjqR5Ix9xUdv7tjiIgOXRE6x9Q4w54Kd3BEXMB9yHu/eGFykZxOW6QDzyp2SmHPFRawJiSQ/c5fP3alTZAAgo1KI2544toGdeOfXBhcbuiTUxDIdIM4kXrJkFzCvbykxzo3FZwT23XGanmK50t5xo9X+rqU1DvcKGQbzTeKlsYtrtxPtXHwGgMl7imX2Gl0voFUvIfeFd+LlsXNzMHWXPG83+fyh0wfsvG+/zJ7mhdIUBnHl/iJZ7KGskU1L4YwHBr9P6Dp23rdfZr/rSbXrWQYxqRRuYvFwhjWy3cUynwxMzqNCx35cWmWOvBgQe2y5Swp3e8WleoOxTffg2uO+weX6NmFITzHBiC52iNjjqnYonDMyeYRefzS1v3FiRX47ue6bPIoxcinUBwzpWy/f8mJ7w2CBrXjxPF5uTFLuZHJt8jissUtE2HhPr5ddLz6M6nMod4iihvZo/5CMY/BYjKFNEjVsvG+/I28OGoN5qCRnX0XXbpGMHXtAl2ji96rbL6N58ygxmHsWLze9MhJO3Rw5JNPZZbD1Mi1vHm0G8yp2iKLH9sRSN6PO6nUVc/cUCJYuh3s0CyzZpeyRtUjq8js5WKRDwxPrnjeOj48b2jk25R4sdnKnV70lpm70xy5FeYcDtnTYF2b+RsmxX/LKzK34OoN7UjsUhzMd9paQuhHvim0TB2wpUfKCtAILUDQM6gvLqZ057rz1Yh+22YLR3HYJocNv2bYodKHse5y0LWzHP42X9z4dWj3ze7oOybjG7GA+nDgUzzuEnh51z6ersFBKG5tyyazZ5dzIdKeD/42nDsWl17BGT5Hnnk8ryySyDZy0LUG5SQ8Ax2swwz99f59hcnkGiV+qSV4TF2ZSRvGXzpYsU1AOvtkrZcUf55W9g++UB37RKq8cHH9zUMqzFcmVO7Qieg1L9NTxDeotdl+KNqMketGmwfwKhy1vRruhZFmIQ22GEvH1R2yG6IPnWtf7pdtQ2IoUT3V6eM0qZu7pU/DuaGfZfR14MxTRizZKnPdu6gUmpHkzDiK+XmMzfB8Iv7i9n2VhtmzVrqvYikuluuTG66KpF9p3c8r4QxfTCsmmXmh7Am2FrUruR+2YuENysr4hlS0x9Zf+8Tr2j+Pr2QRTP/IE5DOaLakdnaeZ4t2RXWLqR5LXLLKaJ9UuJZV6piH91hXKlc90Sk5TReeppkkG9cVSP5K8ZpHvelH2k0m91fJkXrDVKtYuKAH6SRn7cGnn3ZFfXur7kh++vvBiOFxm6rPWunXGdnZPl5q7flbF0zLACgs8OCFvzfNrB0uXO1xF6t08WwM7RbWp0+I+n5Sx2w7/2VviK7AHnpQimL3L7a8gdd8xwSo92a3dv3f94qRaxKQdQp6kKCSZelb0Ozq5wgpS9w7ZOtkpVmvNi3kj38VYDj7n3qxMgqnXpQ/edIX9dzMJpt5uHB83zoX/wKyfXHFXrZ01P+uhgX++ODtRy7s5jOT/tnf3Kq7rUBiGl42CNxomp9FpDAHDniIBTxFIMaDCKVToNtb938Rh0oyt2Ety4nD2lr6nnliZ4rX8Fxlm+dgzsXUX8y6nHgZkOGTb2xxU6bPjwOVVqftuRzeVsRwY6E9W7369vf3z74+3t187TOIQUUfXdlcc8ymnbo/GmM66n8N34WmZ1vGUfk3qx4p+GIc1MiF3Koh269R9V8mr2DkdDGd5wr4k9TYY9IrXWUDmGh7rtk79WFFAudijqGee0C9IvaVAff3zz9YBnqG3T13englKj94UsNunfoyurtcRQF62Tj26ORufPWvHI77aKHX5xrnGu2sga69MvY9urU/5Umbr1E3CbwEqAshK88LLcorumfAv4tl9bpy6o1kaL5+EnCke+9oy9T66Dkaf9LSu2yx1eVSPk3XIWM1jw5apa5pxTZo6a88j1bapa5p3nv5PAHnxPOK3TD0+XJX2I/pmq9TlUVvcWYecXXms2S71IXoQMdCiE4+YrVKXR93jEjzk7MxjLd3bzThOqhNaCzSJM6fZPPX4qAqpQ87ah54IPT2YuuaRz8TUu01T/0pKnQkgL5onqgd+5W62T11vn3p8VKQOOas9ywXFz/B1HqnXSB2yZsO1IALxKnbpqTeJqe9xAA+wsZbXT+uGR7zQmpiTpUXt/3AFvsFlOchazeun9UsQldCaMJhPfLmU3jR1j5ttUCjLE5e1T9O2UmshHxz5L7hu/ghNfNQTHqGBvGmeale+0LFZk7pNGknx2Oxnjw+n3qbs8r4IIDtWfOdBdHUJobXEqVMewQq/d0vcNieMqrA2BeROS+8jjS/YIqYuj6Vpnpudvy+Rq2tWSD0+6gdWnILs2bD1hpZVjifUqtRrnzDBHuarO8uXD2uWU5dHVQ5LU0D2NAd8S0vUwBM9yamHbPy8WS2cIJzkedfw4qzP8Wn9A0vGQgFOHOoVzdKOp9TK1DVPNNH5tRce1xeONpyQulOxr9USQI5qxyFn6F71wYGeVqZOjsd8EztsUIk5hl+tWk6dh0revbAigCw1fM8dFE3sDp4DTq1O3cjnCtot7ktq6U3oB2mtdw4NisYax4xbbVCElucMv98butm9/7Z8z9Dq1OnKU30jHTYo4fLhYfxOGGkvxOJBS3X4G97PCLCNEy9yzvO8nh5IXXNo6HRTVTvdWg510+0HXK+r227Is1gzz3CmoW/64JnxHicox5lXc+qR1OnEyZxwOy3uK0g95N3g+AZn6lCQ83Olp6dOV07k1VNf0QipC44EkLXuudLTU1eO07zTlPK8gqOHUnd4fAZy160tXU796dZbCrW8wu+HUvc4fIf8acepBkWx1J9tvaV7liX+wiPqodQbAsifOnOaY0XR1J9r3b9HH/YJ+ab2s7cHeKzz0iZwnw0KsXcc5zRRPHVRfWLRoFbvI1wzeUBHL6SupU1gTodyGMcy31X0dOryOL6jJerC86yafAdHS6kLm8AVOSiKsbHQn05djr1XJGgd3/NtcFhiFlNfGtnhTctQHHW88hxvdUWUmnqcsfP7Epk6OeEz6nzrlqTUSXWOp2yLKR2KpMzR+mnmRy3X8P45ckgd5uLHY3SaUuzPP6n6T1PRyK3jXkw93MS1w+U4KFqltbnZN9UrR9mbb3q38lPLH9JKSH20CfOtwXwOkAX8bA2gCEgdoAhIHaAISB2gCEgdoAhIHaAISB2gCEgdoAhIHaAISB2gCEgdoAhIHaAISB2gCEgdoAhIHaAISB2gCEgdoAhIHaAIbiwt9f8ALpc9+zAhYGYAAAAASUVORK5CYII=" alt="Foxbit Group" width="140" height="51" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <h3 itemprop="name">Carta de Recomendação</h3>
+        <p class="rec-pull">“Trata-se de um profissional de extrema confiança.”</p>
+        <p class="to">À quem interessar possa,</p>
+        <div class="body" itemprop="reviewBody"><p>Declaro que <strong>João Carlos Bueno Abitante</strong> me prestou serviços de assessoria contábil pessoal e gestão financeira privada no período de <strong>2016 a 2026</strong>.</p><div class="body-more"><p>Durante esse período, o profissional demonstrou total competência, profundo conhecimento técnico e extrema organização. Ele foi responsável por gerenciar minhas obrigações fiscais, declarações e planejamento financeiro pessoal, sempre com total rigor e cumprimento dos prazos legais.</p><p>Sua conduta ética, discrição e responsabilidade no trato de informações financeiras sigilosas sempre foram exemplares. Trata-se de um profissional de extrema confiança.</p><p>Recomendo os serviços de João para qualquer pessoa ou instituição que busque uma gestão contábil eficiente, transparente e de alto nível.</p><p>Fico à disposição para confirmar estas informações ou fornecer mais detalhes por meio dos contatos abaixo.</p></div><button type="button" class="rec-toggle" aria-expanded="false">Ler carta completa</button></div>
+        <footer class="rec-sign">
+          <div class="closing">Atenciosamente,</div>
+          <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Felipe Trovão</span>
+          </div>
+          <div class="org" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Foxbit Group</span>
+          </div>
+        </footer>
+      </article>
+      <p class="rec-note reveal">Carta emitida em 24/06/2026 · Foxbit Group</p>
+    </div>
+  </div>
+</section>
+<section id="como-ajudo">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Três caminhos</span>
+      <h2>Como ajudo</h2>
+      <p>Escolha o caminho que faz sentido agora — software, consultoria ou conteúdo.</p>
+    </div>
+    <div class="paths-grid">
+      <article class="card reveal">
+        <div class="cat">Software</div>
+        <h3>Ferramentas para o escritório</h3>
+        <p>Portal white-label, simuladores e sistemas sob medida com a sua marca — com rigor contábil.</p>
+        <a class="visit" href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">Ver Contbit →</a>
+      </article>
+      <article class="card reveal">
+        <div class="cat">Consultoria</div>
+        <h3>Decisão fiscal e compliance</h3>
+        <p>Planejamento tributário, PLD/FT, cripto e fintechs — conversa direta, sem call center.</p>
+        <a class="visit" href="https://wa.me/5511994105856?text=Ol%C3%A1%20Jo%C3%A3o%2C%20vim%20pelo%20site%20e%20quero%20consultoria." target="_blank" rel="noopener noreferrer">Falar no WhatsApp →</a>
+      </article>
+      <article class="card reveal">
+        <div class="cat">Conteúdo</div>
+        <h3>Educação que gera impacto</h3>
+        <p>Simuladores abertos, mapa tributário e canais sobre elisão fiscal e empreendedorismo.</p>
+        <a class="visit" href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">Abrir simulador →</a>
+      </article>
+    </div>
+  </div>
+</section>
 <section id="sobre">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">Quem está por trás</span>
-      <h2>Sobre João Carlos Bueno Abitante</h2>
+      <span class="tag">Sobre</span>
+      <h2>João Carlos Bueno Abitante</h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>João Carlos Bueno Abitante é contador registrado no <strong>CRC-SP 320961/O-4</strong>, pós-graduado em Controladoria pela FECAP e bacharel em Ciências Contábeis pela Universidade Cruzeiro do Sul.</p>
-        <p>Possui mais de <strong>10 anos de experiência</strong> em contabilidade consultiva, controladoria, compliance, PLD/FT, AML, KYC, planejamento tributário, fintechs, meios de pagamento e criptoativos.</p>
-        <p>Atua na criação de soluções digitais que unem <strong>tecnologia, regulação, Bitcoin, inteligência artificial e impacto social</strong>.</p>
+        <p>Contador <strong>CRC-SP 320961/O-4</strong>, pós em Controladoria (FECAP) e mais de <strong>10 anos</strong> unindo contabilidade, compliance, cripto e software.</p>
+        <p>Fundador da Contbit e criador de ferramentas como A Hora da Elisão Fiscal. Nas redes: <strong>@libertcontador</strong>.</p>
+        <p>Trabalho como boutique: poucos clientes, conversa direta, tecnologia com rigor fiscal.</p>
         <div class="badges">
           <span class="badge">CRC-SP 320961/O-4</span>
           <span class="badge">+10 anos de experiência</span>
@@ -667,270 +806,12 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
     </div>
   </div>
 </section>
-
-
-<!-- ============ RECOMENDAÇÃO ============ -->
-<section id="recomendacao" aria-labelledby="rec-title">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Confiança</span>
-      <h2 id="rec-title">Carta de recomendação</h2>
-      <p>Depoimento profissional sobre a assessoria contábil e a gestão financeira ao longo de uma década.</p>
-    </div>
-    <div class="rec-wrap">
-      <article class="rec-letter reveal" itemscope itemtype="https://schema.org/Review">
-        <meta itemprop="datePublished" content="2026-06-24" />
-        <div class="rec-top">
-          <div class="rec-meta">
-            <span class="place">São Paulo, 24 de junho de 2026</span>
-            <span class="seal" aria-hidden="true">● Recomendação</span>
-          </div>
-          <div class="rec-brand" title="Foxbit Group">
-            <img src="data:image/png;base64,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" alt="Foxbit Group" width="140" height="51" loading="lazy" decoding="async" />
-          </div>
-        </div>
-        <h3 itemprop="name">Carta de Recomendação</h3>
-        <p class="to">À quem interessar possa,</p>
-        <div class="body" itemprop="reviewBody">
-          <p>Declaro que <strong>João Carlos Bueno Abitante</strong> me prestou serviços de assessoria contábil pessoal e gestão financeira privada no período de <strong>2016 a 2026</strong>.</p>
-          <p>Durante esse período, o profissional demonstrou total competência, profundo conhecimento técnico e extrema organização. Ele foi responsável por gerenciar minhas obrigações fiscais, declarações e planejamento financeiro pessoal, sempre com total rigor e cumprimento dos prazos legais.</p>
-          <p>Sua conduta ética, discrição e responsabilidade no trato de informações financeiras sigilosas sempre foram exemplares. Trata-se de um profissional de extrema confiança.</p>
-          <p>Recomendo os serviços de João para qualquer pessoa ou instituição que busque uma gestão contábil eficiente, transparente e de alto nível.</p>
-          <p>Fico à disposição para confirmar estas informações ou fornecer mais detalhes por meio dos contatos abaixo.</p>
-        </div>
-        <footer class="rec-sign">
-          <div class="closing">Atenciosamente,</div>
-          <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <span itemprop="name">Felipe Trovão</span>
-          </div>
-          <div class="org" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
-            <span itemprop="name">Foxbit Group</span>
-          </div>
-        </footer>
-      </article>
-      <p class="rec-note reveal">Carta emitida em 24/06/2026 · Foxbit Group</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ECOSSISTEMA ============ -->
-<section id="ecossistema">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Ecossistema de Projetos</span>
-      <h2>Um portfólio que conecta regulação, tecnologia e impacto</h2>
-      <p>Negócios, ferramentas digitais e iniciativas que traduzem mais de uma década de experiência em produtos reais.</p>
-    </div>
-    <div class="cards-grid">
-
-      <a class="card featured reveal" href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">Carro-chefe</span>
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <div class="cat">SaaS via IA · Contadores</div>
-        <h3>ContBit</h3>
-        <p>IA builder as a service para escritórios de contabilidade: plataformas SaaS sob medida — portais white-label, automação contábil e simuladores tributários — construídas e geridas com inteligência artificial, com validação de contador.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://hashrateconsultoria.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
-        <div class="cat">Consultoria Estratégica</div>
-        <h3>Hash Rate Consultoria</h3>
-        <p>Consultoria para Compliance, Bitcoin, Blockchain, Governança e Inteligência Artificial.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://autistaempreende.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div class="cat">Impacto Social</div>
-        <h3>Autista Empreende</h3>
-        <p>Projeto voltado à inclusão produtiva, empreendedorismo e empregabilidade de pessoas autistas.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://mundo.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
-        <div class="cat">Global Tax Intelligence</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <h3>Mundial Tax</h3>
-        <p>Mapa tributário global interativo sobre renda, exportação de serviços, Bitcoin, criptoativos e rendimentos do exterior.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6M9 11h6M9 15h4"/><path d="M5 3h14a1 1 0 011 1v16a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/><circle cx="17.5" cy="6.5" r="3.5" fill="var(--bg)"/><path d="M16 6.5l1 1 2-2"/></svg></div>
-        <div class="cat">TaxTech · Elisão Fiscal</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <h3>Simulador Tributário</h3>
-        <p>Simulador anônimo da A Hora da Elisão Fiscal: compara Pessoa Física, MEI, Simples Nacional, Lucro Presumido e Real, com CNAE/Fator R, exportação e a Reforma Tributária (IBS/CBS) ano a ano até 2033 — sem coletar dados e com relatório em PDF.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://mei.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h4"/></svg></div>
-        <div class="cat">Simulador MEI · Inclusão</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <h3>Simulador Financeiro MEI</h3>
-        <p>Simulador gratuito e anônimo para empreendedores autistas: calcula DAS, teto do MEI, sobra de caixa e a saúde do negócio — com modo calmo, ajuste de texto e 100% offline. Um projeto Autista Empreende.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://copa2026-9wy.pages.dev" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z"/></svg></div>
-        <div class="cat">Sports Analytics</div>
-        <h3>Copa 2026</h3>
-        <p>Simulações, rankings e estatísticas da Copa do Mundo 2026 utilizando Inteligência Artificial.</p>
-        <span class="visit">Acessar projeto <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ ESPECIALIDADES ============ -->
-<section id="especialidades">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Áreas de domínio</span>
-      <h2>Especialidades</h2>
-      <p>Da regulação à tecnologia — um espectro completo de competências aplicadas.</p>
-    </div>
-    <div class="skills-grid reveal" id="skills"></div>
-  </div>
-</section>
-
-<!-- ============ CONTEÚDO E MÍDIA ============ -->
-<section id="conteudo">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Conteúdo &amp; Mídia</span>
-      <h2>Educação que gera impacto</h2>
-      <p>Conteúdos que descomplicam tributação, criptoativos, compliance e inclusão.</p>
-    </div>
-    <div class="media-grid">
-
-      <div class="media-card reveal">
-        <span class="type">Canal no YouTube</span>
-        <h3>A Hora da Elisão Fiscal</h3>
-        <p>Canal educacional focado em:</p>
-        <ul>
-          <li>Planejamento Tributário Lícito</li>
-          <li>Reforma Tributária</li>
-          <li>Fator R &amp; Simples Nacional</li>
-          <li>Bitcoin &amp; Criptoativos</li>
-          <li>Compliance Tributário</li>
-          <li>Exportação de Serviços</li>
-        </ul>
-        <div class="media-actions">
-          <a href="https://www.youtube.com/@ahoradaelisao" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
-            Assistir no YouTube
-          </a>
-          <a href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Abrir Simulador</a>
-        </div>
-      </div>
-
-      <div class="media-card reveal">
-        <span class="type">Impacto Social</span>
-        <h3>Autista Empreende</h3>
-        <p>Projeto de inclusão produtiva, empreendedorismo e desenvolvimento profissional para pessoas autistas.</p>
-        <div class="media-actions">
-          <a href="https://autistaempreende.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visitar Website</a>
-          <a href="https://www.youtube.com/@autistaempreendetv" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
-            YouTube
-          </a>
-          <a href="https://instagram.com/teaempreende" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Instagram</a>
-        </div>
-      </div>
-
-      <div class="media-card reveal">
-        <span class="type">Canal no YouTube</span>
-        <h3>Abitante de Pallet</h3>
-        <p>Do casual ao competitivo no Pokémon TCG: onde competir, como montar deck, ler o meta e evoluir — um passo de cada vez, sem complicação e sem gastar fortuna.</p>
-        <div class="media-actions">
-          <a href="https://pallet.abitante.net/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visitar Site</a>
-          <a href="https://www.youtube.com/@AbitantedePallet" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
-            YouTube
-          </a>
-        </div>
-      </div>
-
-      <div class="media-card counter-card reveal">
-        <div class="big grad-text"><span class="count" data-target="68358">0</span>+</div>
-        <p>Visualizações acumuladas em conteúdos sobre Compliance, Tributação, Bitcoin, Criptoativos, Inteligência Artificial e Neurodiversidade.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ ESTATÍSTICAS ============ -->
-<section id="estatisticas">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Números</span>
-      <h2>Estatísticas</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat reveal"><div class="num grad-text"><span class="count" data-target="10">0</span>+</div><div class="label">Anos de experiência</div></div>
-      <div class="stat reveal"><div class="num grad-text"><span class="count" data-target="15">0</span>+</div><div class="label">Clientes internacionais</div></div>
-      <div class="stat reveal"><div class="num grad-text"><span class="count" data-target="68358">0</span>+</div><div class="label">Visualizações</div></div>
-      <div class="stat reveal"><div class="num grad-text"><span class="count" data-target="6">0</span></div><div class="label">Projetos digitais</div></div>
-      <div class="stat reveal"><div class="num grad-text word">CRC-SP</div><div class="label">Registro ativo</div></div>
-      <div class="stat reveal"><div class="num grad-text word">Fintech</div><div class="label">Experiência em cripto &amp; pagamentos</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMO EU GERO VALOR ============ -->
-<section id="valor">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Proposta de valor</span>
-      <h2>Como eu gero valor</h2>
-    </div>
-    <div class="value-grid">
-      <div class="value-card reveal">
-        <span class="vnum">01</span>
-        <h3>Perfil Técnico</h3>
-        <p>Compliance, PLD/FT, AML, KYC, IN 1888, MED, Planejamento Tributário, Exportação de Serviços e Criptoativos.</p>
-      </div>
-      <div class="value-card reveal">
-        <span class="vnum">02</span>
-        <h3>Perfil Comercial</h3>
-        <p>Captação de clientes, relacionamento, produção de conteúdo, posicionamento digital e geração de receita.</p>
-      </div>
-      <div class="value-card reveal">
-        <span class="vnum">03</span>
-        <h3>Perfil Institucional</h3>
-        <p>Diversidade, inclusão, governança, ESG e fortalecimento institucional.</p>
-      </div>
-    </div>
-    <div class="quote reveal">Contrate competência. Remunere resultado. <span class="grad-text">Cresça junto comigo.</span></div>
-  </div>
-</section>
-
-<!-- ============ BLOG ============ -->
-<section id="blog">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="tag">Insights</span>
-      <h2>Blog</h2>
-      <p>Textos selecionados da newsletter <strong>Autista Empreende</strong> — entre contabilidade, tecnologia, neurodiversidade e a nova economia.</p>
-    </div>
-    <div class="blog-grid" id="blog-grid"></div>
-  </div>
-</section>
-
-<!-- ============ CONTATO ============ -->
 <section id="contato">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">Vamos conversar</span>
-      <h2>Entre em contato</h2>
-      <p>Vamos construir juntos a próxima solução da nova economia.</p>
+      <span class="tag">Contato</span>
+      <h2>Prefere conversa direta?</h2>
+      <p>WhatsApp, LinkedIn ou @libertcontador — sem intermediário.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
@@ -964,8 +845,6 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
     </div>
   </div>
 </section>
-
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
     <div class="foot-top">
@@ -980,7 +859,7 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
           <li><a href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">ContBit</a></li>
           <li><a href="https://hashrateconsultoria.com.br/" target="_blank" rel="noopener noreferrer">Hash Rate Consultoria</a></li>
           <li><a href="https://autistaempreende.com.br/" target="_blank" rel="noopener noreferrer">Autista Empreende</a></li>
-          <li><a href="#conteudo">A Hora da Elisão Fiscal</a></li>
+          <li><a href="#projetos">A Hora da Elisão Fiscal</a></li>
           <li><a href="https://mundo.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">Mundial Tax</a></li>
           <li><a href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">Simulador Tributário · Elisão Fiscal</a></li>
           <li><a href="https://mei.contbit.tax/" target="_blank" rel="noopener noreferrer">Simulador Financeiro MEI</a></li>
@@ -1223,5 +1102,20 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
 
 })();
 </script>
+
+<script>
+(function(){
+  var btn = document.querySelector('.rec-toggle');
+  var letter = document.querySelector('.rec-letter');
+  if(!btn || !letter) return;
+  btn.addEventListener('click', function(){
+    letter.classList.toggle('collapsed');
+    var isCollapsed = letter.classList.contains('collapsed');
+    btn.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+    btn.textContent = isCollapsed ? 'Ler carta completa' : 'Recolher carta';
+  });
+})();
+</script>
+
 </body>
 </html>
