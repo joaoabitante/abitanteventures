@@ -466,6 +466,7 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
 }
 
 
+
 /* ========== Carta de Recomendação ========== */
 #recomendacao{
   position:relative;
@@ -496,16 +497,13 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
   border-radius:20px 0 0 20px;
   background:linear-gradient(180deg,#38bdf8,#818cf8 55%,#c084fc);
 }
-.rec-letter::after{
-  content:"";
-  position:absolute;right:-30px;top:-30px;width:140px;height:140px;
-  background:radial-gradient(circle,rgba(56,189,248,.14),transparent 70%);
-  pointer-events:none;
+.rec-top{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;
+  gap:16px 20px;margin-bottom:18px;padding-bottom:16px;
+  border-bottom:1px solid rgba(120,160,255,.12);
 }
 .rec-meta{
-  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;
-  margin-bottom:18px;padding-bottom:14px;
-  border-bottom:1px solid rgba(120,160,255,.12);
+  display:flex;flex-direction:column;align-items:flex-start;gap:10px;
   font-size:.86rem;color:var(--txt-dim, #9aa8c7);
 }
 .rec-meta .place{font-weight:600;color:var(--txt, #e8eefc)}
@@ -516,6 +514,18 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
   background:rgba(56,189,248,.1);
   border:1px solid rgba(56,189,248,.22);
   padding:5px 11px;border-radius:999px;
+}
+.rec-brand{
+  flex:0 0 auto;
+  background:rgba(255,255,255,.96);
+  border-radius:12px;
+  padding:10px 14px;
+  border:1px solid rgba(120,160,255,.12);
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+  line-height:0;
+}
+.rec-brand img{
+  display:block;height:36px;width:auto;max-width:148px;object-fit:contain;
 }
 .rec-letter h3{
   font-size:clamp(1.2rem,2.4vw,1.5rem);
@@ -543,14 +553,15 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
   font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.01em;
   font-family:Georgia,"Times New Roman",serif;
 }
-.rec-sign .email a{
-  color:var(--cyan, #38bdf8);font-size:.92rem;text-decoration:none;
-  border-bottom:1px solid rgba(56,189,248,.35);
+.rec-sign .org{
+  font-size:.95rem;font-weight:600;color:var(--cyan, #38bdf8);margin-top:2px;
 }
-.rec-sign .email a:hover{border-bottom-color:var(--cyan, #38bdf8)}
 .rec-note{
   text-align:center;font-size:.85rem;color:var(--txt-dim, #9aa8c7);
   max-width:48ch;margin:0 auto;line-height:1.5;
+}
+@media(max-width:560px){
+  .rec-brand img{height:30px}
 }
 
 </style>
@@ -664,14 +675,19 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
     <div class="section-head reveal">
       <span class="tag">Confiança</span>
       <h2 id="rec-title">Carta de recomendação</h2>
-      <p>Depoimento de quem acompanhou a assessoria contábil e a gestão financeira ao longo de uma década.</p>
+      <p>Depoimento profissional sobre a assessoria contábil e a gestão financeira ao longo de uma década.</p>
     </div>
     <div class="rec-wrap">
       <article class="rec-letter reveal" itemscope itemtype="https://schema.org/Review">
         <meta itemprop="datePublished" content="2026-06-24" />
-        <div class="rec-meta">
-          <span class="place">São Paulo, 24 de junho de 2026</span>
-          <span class="seal" aria-hidden="true">● Recomendação</span>
+        <div class="rec-top">
+          <div class="rec-meta">
+            <span class="place">São Paulo, 24 de junho de 2026</span>
+            <span class="seal" aria-hidden="true">● Recomendação</span>
+          </div>
+          <div class="rec-brand" title="Foxbit Group">
+            <img src="data:image/png;base64,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" alt="Foxbit Group" width="140" height="51" loading="lazy" decoding="async" />
+          </div>
         </div>
         <h3 itemprop="name">Carta de Recomendação</h3>
         <p class="to">À quem interessar possa,</p>
@@ -687,9 +703,12 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
           <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
             <span itemprop="name">Felipe Trovão</span>
           </div>
+          <div class="org" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="name">Foxbit Group</span>
+          </div>
         </footer>
       </article>
-      <p class="rec-note reveal">Carta original emitida em 24/06/2026. O autor se coloca à disposição para confirmação.</p>
+      <p class="rec-note reveal">Carta emitida em 24/06/2026 · Foxbit Group</p>
     </div>
   </div>
 </section>
