@@ -464,6 +464,76 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ========== Carta de Recomendação ========== */
+.rec-wrap{display:grid;gap:28px;max-width:820px;margin:0 auto}
+.rec-letter{
+  position:relative;
+  background:linear-gradient(165deg,rgba(248,250,255,.97),rgba(232,236,248,.94));
+  color:#1a1f2e;
+  border-radius:18px;
+  padding:clamp(28px,5vw,48px) clamp(22px,4vw,44px);
+  box-shadow:
+    0 0 0 1px rgba(120,160,255,.18),
+    0 24px 60px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.85);
+  overflow:hidden;
+}
+.rec-letter::before{
+  content:"";
+  position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,#38bdf8,#818cf8 50%,#c084fc);
+}
+.rec-letter::after{
+  content:"";
+  position:absolute;right:-40px;top:-40px;width:160px;height:160px;
+  background:radial-gradient(circle,rgba(56,189,248,.12),transparent 70%);
+  pointer-events:none;
+}
+.rec-meta{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;
+  margin-bottom:22px;padding-bottom:16px;
+  border-bottom:1px solid rgba(26,31,46,.1);
+  font-size:.88rem;color:#4a5568;
+}
+.rec-meta .place{font-weight:600;color:#2d3748}
+.rec-meta .seal{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#0369a1;background:rgba(56,189,248,.12);
+  border:1px solid rgba(56,189,248,.28);padding:5px 10px;border-radius:999px;
+}
+.rec-letter h3{
+  font-size:clamp(1.25rem,2.5vw,1.55rem);color:#0f172a;margin:0 0 18px;
+  letter-spacing:-.02em;font-weight:800;
+}
+.rec-letter .to{font-size:.95rem;color:#334155;margin-bottom:18px;font-weight:500}
+.rec-letter .body p{
+  font-size:1.02rem;line-height:1.75;color:#1e293b;margin:0 0 1em;
+  text-align:justify;hyphens:auto;
+}
+.rec-letter .body p:last-child{margin-bottom:0}
+.rec-sign{
+  margin-top:28px;padding-top:22px;
+  border-top:1px solid rgba(26,31,46,.1);
+  display:grid;gap:4px;
+}
+.rec-sign .closing{font-size:.95rem;color:#475569;margin-bottom:12px}
+.rec-sign .name{
+  font-size:1.2rem;font-weight:800;color:#0f172a;letter-spacing:-.01em;
+  font-family:Georgia,"Times New Roman",serif;
+}
+.rec-sign .email a{
+  color:#0369a1;font-size:.92rem;text-decoration:none;border-bottom:1px solid rgba(3,105,161,.3);
+}
+.rec-sign .email a:hover{border-bottom-color:#0369a1}
+.rec-note{
+  text-align:center;font-size:.88rem;color:var(--txt-dim);max-width:52ch;margin:0 auto;
+}
+@media(max-width:560px){
+  .rec-letter .body p{text-align:left}
+}
+
 </style>
 </head>
 <body>
@@ -479,6 +549,7 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
       <ul>
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#recomendacao">Recomendação</a></li>
         <li><a href="#ecossistema">Ecossistema</a></li>
         <li><a href="#especialidades">Especialidades</a></li>
         <li><a href="#conteudo">Conteúdo</a></li>
@@ -497,6 +568,7 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
 <aside class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
   <a href="#inicio">Início</a>
   <a href="#sobre">Sobre</a>
+  <a href="#recomendacao">Recomendação</a>
   <a href="#ecossistema">Ecossistema</a>
   <a href="#especialidades">Especialidades</a>
   <a href="#conteudo">Conteúdo</a>
@@ -562,6 +634,44 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
         <h3>João C. B. Abitante</h3>
         <div class="role">Contador • Compliance • Cripto • IA</div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ RECOMENDAÇÃO ============ -->
+<section id="recomendacao" aria-labelledby="rec-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Confiança</span>
+      <h2 id="rec-title">Carta de recomendação</h2>
+      <p>Depoimento de quem acompanhou a assessoria contábil e a gestão financeira ao longo de uma década.</p>
+    </div>
+    <div class="rec-wrap">
+      <article class="rec-letter reveal" itemscope itemtype="https://schema.org/Review">
+        <meta itemprop="datePublished" content="2026-06-24" />
+        <div class="rec-meta">
+          <span class="place">São Paulo, 24 de junho de 2026</span>
+          <span class="seal" aria-hidden="true">● Recomendação</span>
+        </div>
+        <h3 itemprop="name">Carta de Recomendação</h3>
+        <p class="to">À quem interessar possa,</p>
+        <div class="body" itemprop="reviewBody">
+          <p>Declaro que <strong>João Carlos Bueno Abitante</strong> me prestou serviços de assessoria contábil pessoal e gestão financeira privada no período de <strong>2016 a 2026</strong>.</p>
+          <p>Durante esse período, o profissional demonstrou total competência, profundo conhecimento técnico e extrema organização. Ele foi responsável por gerenciar minhas obrigações fiscais, declarações e planejamento financeiro pessoal, sempre com total rigor e cumprimento dos prazos legais.</p>
+          <p>Sua conduta ética, discrição e responsabilidade no trato de informações financeiras sigilosas sempre foram exemplares. Trata-se de um profissional de extrema confiança.</p>
+          <p>Recomendo os serviços de João para qualquer pessoa ou instituição que busque uma gestão contábil eficiente, transparente e de alto nível.</p>
+          <p>Fico à disposição para confirmar estas informações ou fornecer mais detalhes por meio dos contatos abaixo.</p>
+        </div>
+        <footer class="rec-sign">
+          <div class="closing">Atenciosamente,</div>
+          <div class="name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Felipe Trovão</span>
+          </div>
+          <div class="email"><a href="mailto:felipetdsa@gmail.com" itemprop="email">felipetdsa@gmail.com</a></div>
+        </footer>
+      </article>
+      <p class="rec-note reveal">Carta original emitida em 24/06/2026. O autor se coloca à disposição para confirmação.</p>
     </div>
   </div>
 </section>
