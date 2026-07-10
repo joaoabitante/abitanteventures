@@ -1,55 +1,72 @@
-# Segurança — João Abitante Ventures (portfólio)
+# Segurança e contato — João Abitante Ventures
 
-**Última revisão:** 2026-07-10  
-**Repo:** público (portfólio institucional)  
-**Live (GitHub Pages):** https://joaoabitante.github.io/abitanteventures/  
-**Domínio canônico no HTML:** https://joao.abitante.net/
+**Ao vivo:** https://joaoabitante.github.io/abitanteventures/  
+**Canônico:** https://joao.abitante.net/
 
-## Modelo
+## Como alguém entra em contato (canais oficiais)
 
-Página única (`index.html`), **sem backend**, **sem analytics**, **sem cookies/storage**, **sem CDN**.  
-Foto, fontes e ícone embutidos. `connect-src 'none'` na CSP impede qualquer chamada de rede pela página.
+Estes dados **precisam** estar públicos — é o portfólio. Não é vazamento.
 
-## Resultado da auditoria (2026-07-10)
+| Canal | Como | Link / valor |
+|-------|------|----------------|
+| **E-mail profissional** | Clique ou copie | `joao.abitante.contabeis@gmail.com` |
+| **E-mail ContBit / projetos** | Clique ou copie | `contbit@gmail.com` |
+| **Telefone** | Ligar (`tel:`) | +55 11 99410-5856 |
+| **WhatsApp** | App / web | [wa.me/5511994105856](https://wa.me/5511994105856) |
+| **Formulário do site** | Abre o **e-mail do visitante** com assunto/corpo preenchidos (`mailto:`) — nada é enviado a um servidor nosso |
+| **LinkedIn** | Perfil | /in/joaocarlos1 |
+| **Instagram** | @teaempreende | |
 
-| Controle | Status |
-|----------|--------|
-| localStorage / sessionStorage / cookies | Ausentes |
-| fetch / XHR / eval | Ausentes |
-| Google Analytics / gtag / pixels | Ausentes |
-| CDNs / Google Fonts | Ausentes |
-| Links `target=_blank` com `noopener noreferrer` | 28/28 OK |
-| CSP meta (`connect-src 'none'`) | OK |
-| Form contato | `preventDefault` + `mailto:` (sem servidor) |
-| `_headers` (CSP, HSTS, COOP, CORP, Permissions-Policy) | Presente — **só aplicado no Cloudflare/Netlify**, não no GitHub Pages |
-| Wiki do repo | Desligada |
+O site **não** tem chat embutido, CRM nem backend de mensagens. Quem preenche o formulário usa o próprio cliente de e-mail.
 
-### Dados pessoais intencionais no HTML/JSON-LD
+---
 
-O portfólio **publica de propósito** (contato profissional):
+## Headers de segurança: o que o GitHub faz e o que não faz
 
-- e-mails (`joao.abitante.contabeis@gmail.com`, `contbit@gmail.com`)
-- telefone (+55 11 99410-5856)
-- LinkedIn / redes / CRC
+### Limitação importante
 
-Isso **não é vazamento acidental**; é SEO e contato. Se quiser menos exposição, remova `telephone`/`email` do JSON-LD e deixe só formulário mailto.
+O **GitHub Pages não aplica** o arquivo `_headers` (isso é recurso de **Cloudflare Pages / Netlify**).
 
-### Limitações do GitHub Pages
+No `github.io` a proteção real vem de:
 
-O host **não envia** o arquivo `_headers`. No ar em `github.io` valem:
+1. **Meta CSP** e **Referrer-Policy** dentro do `index.html` (já no ar)
+2. HSTS do domínio `github.io` (do próprio GitHub)
 
-- CSP e Referrer-Policy via **meta** no HTML (já suficientes para bloquear exfiltração pela página)
-- HSTS do domínio `github.io` (do GitHub)
+### O que a CSP do HTML garante (também no GitHub Pages)
 
-**Não** chegam via Pages: `X-Frame-Options`, `Permissions-Policy` HTTP, NEL cancel, etc.
+- `connect-src 'none'` — a página **não** pode chamar APIs, analytics nem pixels
+- `default-src 'none'` + allowlist mínima (só script/style inline, imagens self/data)
+- `form-action 'none'` — formulário HTML não posta para servidor; o JS usa `mailto:`
+- Sem cookies, localStorage, fetch, XHR, Google Fonts, CDNs
 
-**Recomendação:** publicar também (ou só) no **Cloudflare Pages** com o mesmo repo para headers completos e domínio `joao.abitante.net`, com Web Analytics/RUM **desligados**.
+### O que o arquivo `_headers` adiciona (quando o host respeita)
 
-### O que o visitante ainda pode revelar (inerente)
+Use no **Cloudflare Pages** (recomendado para `joao.abitante.net`):
 
-- IP nos logs do host (GitHub/Cloudflare)
-- Ao clicar em links externos (LinkedIn, WhatsApp, projetos), o **destino** vê o IP — o site usa `rel="noreferrer"` para não vazar a URL de origem
+- CSP completa com `frame-ancestors 'none'`
+- `X-Frame-Options: DENY`
+- `Permissions-Policy` (opt-out Topics/FLoC)
+- COOP / CORP
+- HSTS longo
+- NEL/Report-To zerados (anti-telemetria CDN)
 
-## Como reportar
+Arquivo no repo: [`_headers`](_headers)
 
-Issues privadas ou contato pelo e-mail do portfólio. Não publicar exploits detalhados em issue pública.
+### Páginas necessárias
+
+| Site | Host | Headers |
+|------|------|---------|
+| Portfólio Ventures | GitHub Pages + (opcional) Cloudflare | Meta CSP no HTML + `_headers` para CF |
+| Prêmio Cripto | Cloudflare (`premio.elisaofiscal.net`) | `_headers` no edge + meta CSP no HTML |
+
+---
+
+## Privacidade do visitante
+
+- Zero analytics / pixels / fingerprinting no código
+- Links externos com `rel="noopener noreferrer"`
+- IP do visitante ainda aparece nos logs do **host** (GitHub/Cloudflare) — inerente à web
+
+## Reportar vulnerabilidade
+
+Contato pelos e-mails da tabela acima. Não abra issue pública com exploit detalhado.
