@@ -1,6 +1,8 @@
 # João Abitante Ventures
 
-Site institucional / portfólio de João Carlos Bueno Abitante — Compliance, Bitcoin, Inteligência Artificial e Impacto Social.
+Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA, aberto a **PJ** e **CLT**.
+
+Posicionamento: vender o perfil para fintechs, escritórios e grandes empresas (compliance, tributário, produto TaxTech).
 
 **Ao vivo (GitHub Pages):** https://joaoabitante.github.io/abitanteventures/  
 **Canônico no HTML:** https://joao.abitante.net/  
