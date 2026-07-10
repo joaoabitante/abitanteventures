@@ -1,6 +1,10 @@
 # João Abitante Ventures
 
-Site institucional de João Carlos Bueno Abitante — Compliance, Bitcoin, Inteligência Artificial e Impacto Social.
+Site institucional / portfólio de João Carlos Bueno Abitante — Compliance, Bitcoin, Inteligência Artificial e Impacto Social.
+
+**Ao vivo (GitHub Pages):** https://joaoabitante.github.io/abitanteventures/  
+**Canônico no HTML:** https://joao.abitante.net/  
+**Segurança:** [SECURITY.md](SECURITY.md)
 
 Página única, sem frameworks e sem dependências obrigatórias externas (HTML + CSS + JavaScript puro). A foto está embutida no próprio arquivo, então **`index.html` é tudo que o site precisa para funcionar**, inclusive offline.
 

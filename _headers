@@ -3,10 +3,12 @@
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=(), interest-cohort=()
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=(), interest-cohort=(), join-ad-interest-group=(), run-ad-auction=()
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-DNS-Prefetch-Control: off
   X-Permitted-Cross-Domain-Policies: none
+  NEL: {"max_age": 0}
+  Report-To: {"group": "cf-nel", "max_age": 0, "endpoints": []}
   Cache-Control: public, max-age=3600
