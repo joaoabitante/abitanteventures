@@ -1,7 +1,9 @@
-/*! Contbit Referral — link de indicação + WhatsApp com nome do indicador.
- * Uso: <div data-referral data-site="Contbit" data-wa="5511994105856"></div>
- *      <script src="referral.js" defer></script>
- * URL: ?ref=Nome+Da+Pessoa  → grava no localStorage e entra no texto do WhatsApp.
+/*! Contbit Referral v2 — gera link de indicação e injeta nome no WhatsApp.
+ * HTML: <div data-referral data-site="..." data-wa="..." data-theme="...">
+ *         ... formulário com data-ref-form / data-ref-result ...
+ *       </div>
+ *       <script src="referral.js" defer></script>
+ * URL: ?ref=Nome → grava 90 dias e entra no texto do WhatsApp.
  */
 (function (global) {
   "use strict";
@@ -9,6 +11,7 @@
   var STORAGE_KEY = "contbit_referral_v1";
   var TTL_MS = 90 * 24 * 60 * 60 * 1000;
   var IND_RE = /Indicado por\s*:/i;
+  var uid = 0;
 
   function sanitizeName(raw) {
     return String(raw || "")
@@ -23,6 +26,14 @@
     return String(raw || "").replace(/\D/g, "").slice(0, 15);
   }
 
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function readStore() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
@@ -34,8 +45,7 @@
         return null;
       }
       o.name = sanitizeName(o.name);
-      if (!o.name) return null;
-      return o;
+      return o.name ? o : null;
     } catch (e) {
       return null;
     }
@@ -56,10 +66,9 @@
       var p = new URLSearchParams(location.search);
       var ref = p.get("ref") || p.get("indicado") || p.get("indicacao");
       if (!ref) return readStore();
-      var name = sanitizeName(decodeURIComponent(ref));
+      var name = sanitizeName(decodeURIComponent(String(ref)));
       if (!name) return readStore();
-      var phone = sanitizePhone(p.get("rphone") || p.get("tel") || "");
-      return writeStore(name, phone);
+      return writeStore(name, p.get("rphone") || p.get("tel") || "");
     } catch (e) {
       return readStore();
     }
@@ -91,8 +100,10 @@
       if (!label) return href;
       var u = new URL(href, location.href);
       var text = u.searchParams.get("text") || "";
-      var decoded = "";
-      try { decoded = decodeURIComponent(text); } catch (e) { decoded = text; }
+      var decoded = text;
+      try {
+        decoded = decodeURIComponent(text);
+      } catch (e) { /* keep */ }
       if (IND_RE.test(decoded)) return href;
       u.searchParams.set("text", appendReferrerToText(decoded));
       return u.toString();
@@ -102,22 +113,32 @@
   }
 
   function patchWaLinks(root) {
-    var scope = root || document;
-    var links = scope.querySelectorAll('a[href*="wa.me"]');
-    for (var i = 0; i < links.length; i++) {
-      var a = links[i];
-      if (a.dataset.refPatched === "1") continue;
-      var next = withReferrerInWaUrl(a.getAttribute("href"));
-      if (next && next !== a.getAttribute("href")) {
-        a.setAttribute("href", next);
-        a.dataset.refPatched = "1";
+    try {
+      var scope = root || document;
+      var links = scope.querySelectorAll('a[href*="wa.me"]');
+      for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        var next = withReferrerInWaUrl(a.getAttribute("href"));
+        if (next && next !== a.getAttribute("href")) a.setAttribute("href", next);
       }
-    }
+    } catch (e) { /* ignore */ }
   }
 
   function buildShareUrl(name, phone) {
     var n = sanitizeName(name);
-    var u = new URL(location.origin + location.pathname);
+    var base = location.origin + location.pathname;
+    // remove index.html do caminho para link limpo
+    base = base.replace(/\/index\.html?$/i, "/");
+    var u;
+    try {
+      u = new URL(base);
+    } catch (e) {
+      u = new URL(location.href);
+      u.hash = "";
+      u.search = "";
+    }
+    u.search = "";
+    u.hash = "";
     u.searchParams.set("ref", n);
     var ph = sanitizePhone(phone);
     if (ph) u.searchParams.set("rphone", ph);
@@ -133,8 +154,7 @@
         var ta = document.createElement("textarea");
         ta.value = text;
         ta.setAttribute("readonly", "");
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
+        ta.style.cssText = "position:fixed;left:-9999px;top:0";
         document.body.appendChild(ta);
         ta.select();
         var ok = document.execCommand("copy");
@@ -146,182 +166,280 @@
     });
   }
 
-  function el(tag, cls, html) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (html != null) n.innerHTML = html;
-    return n;
-  }
+  function ensureStructure(host) {
+    // Se o HTML já trouxe o formulário, usa; senão monta.
+    var form = host.querySelector("[data-ref-form]");
+    var result = host.querySelector("[data-ref-result]");
+    if (form && result) return { form: form, result: result, built: false };
 
-  function mountWidget(host) {
-    if (!host || host.dataset.refMounted === "1") return;
-    host.dataset.refMounted = "1";
-
-    var site = host.getAttribute("data-site") || host.getAttribute("data-site-name") || document.title || "este site";
-    var wa = sanitizePhone(host.getAttribute("data-wa") || "5511994105856") || "5511994105856";
+    uid += 1;
+    var id = "refw" + uid;
     var commission = host.getAttribute("data-commission") || "";
     var theme = host.getAttribute("data-theme") || "default";
-
     host.classList.add("ref-widget");
     host.setAttribute("data-theme", theme);
 
-    var title = el("h2", "ref-title", "Indique e ganhe comissão");
-    var lead = el(
-      "p",
-      "ref-lead",
-      "Crie seu link de indicação. Quando alguém entrar por ele e falar no WhatsApp, " +
-        "o nome de quem indicou aparece na mensagem — assim a comissão é rastreável."
-    );
-    if (commission) {
-      lead.innerHTML +=
-        ' <strong class="ref-comm">' + commission.replace(/[<>&]/g, "") + "</strong>";
-    }
-
-    var form = el("form", "ref-form");
-    form.setAttribute("novalidate", "");
-
-    var row1 = el("div", "ref-field");
-    row1.innerHTML =
-      '<label for="ref-name">Seu nome (aparece no WhatsApp)</label>' +
-      '<input id="ref-name" name="name" type="text" maxlength="60" required autocomplete="name" placeholder="Ex.: Maria Silva" />';
-
-    var row2 = el("div", "ref-field");
-    row2.innerHTML =
-      '<label for="ref-phone">Seu WhatsApp <span class="ref-opt">(opcional — para contato da comissão)</span></label>' +
-      '<input id="ref-phone" name="phone" type="tel" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ex.: 11 99410-5856" />';
-
-    var actions = el("div", "ref-actions");
-    var btnGen = el("button", "ref-btn ref-btn-primary", "Gerar meu link");
-    btnGen.type = "submit";
-    actions.appendChild(btnGen);
-
-    form.appendChild(row1);
-    form.appendChild(row2);
-    form.appendChild(actions);
-
-    var result = el("div", "ref-result");
-    result.hidden = true;
-    result.innerHTML =
-      '<label for="ref-link">Seu link de indicação</label>' +
+    host.innerHTML =
+      '<h2 class="ref-title">Indique e ganhe comissão</h2>' +
+      '<p class="ref-lead">Crie seu link de indicação. Quando alguém entrar por ele e falar no WhatsApp, ' +
+      "o nome de quem indicou aparece na mensagem — assim a comissão é rastreável." +
+      (commission
+        ? ' <strong class="ref-comm">' + escapeHtml(commission) + "</strong>"
+        : "") +
+      "</p>" +
+      '<div class="ref-banner" data-ref-banner hidden></div>' +
+      '<div class="ref-form" data-ref-form>' +
+      '<div class="ref-field">' +
+      '<label for="' +
+      id +
+      '-name">Seu nome (aparece no WhatsApp)</label>' +
+      '<input id="' +
+      id +
+      '-name" data-ref-name type="text" maxlength="60" autocomplete="name" placeholder="Ex.: Maria Silva" />' +
+      "</div>" +
+      '<div class="ref-field">' +
+      '<label for="' +
+      id +
+      '-phone">Seu WhatsApp <span class="ref-opt">(opcional)</span></label>' +
+      '<input id="' +
+      id +
+      '-phone" data-ref-phone type="tel" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ex.: 11 99410-5856" />' +
+      "</div>" +
+      '<div class="ref-actions">' +
+      '<button type="button" class="ref-btn ref-btn-primary" data-ref-generate>Gerar meu link</button>' +
+      "</div>" +
+      '<p class="ref-error" data-ref-error hidden></p>' +
+      "</div>" +
+      '<div class="ref-result" data-ref-result hidden>' +
+      "<label>Seu link de indicação</label>" +
       '<div class="ref-link-row">' +
-      '<input id="ref-link" type="text" readonly />' +
+      '<input data-ref-link type="text" readonly />' +
       '<button type="button" class="ref-btn ref-btn-primary" data-act="copy">Copiar</button>' +
       "</div>" +
       '<div class="ref-actions ref-actions-2">' +
-      '<a class="ref-btn ref-btn-wa" data-act="wa" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>' +
+      '<a class="ref-btn ref-btn-wa" data-act="wa" href="#" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>' +
       '<button type="button" class="ref-btn ref-btn-ghost" data-act="again">Gerar outro</button>' +
       "</div>" +
-      '<p class="ref-hint">Quem abrir o link e clicar em WhatsApp enviará algo como: “Indicado por: <em>Seu Nome</em>”.</p>';
+      '<p class="ref-hint">Quem abrir o link e clicar em WhatsApp enviará: “Indicado por: <em>Seu Nome</em>”.</p>' +
+      "</div>";
 
-    var banner = el("div", "ref-banner");
-    banner.hidden = true;
+    return {
+      form: host.querySelector("[data-ref-form]"),
+      result: host.querySelector("[data-ref-result]"),
+      built: true
+    };
+  }
 
-    host.appendChild(title);
-    host.appendChild(lead);
-    host.appendChild(banner);
-    host.appendChild(form);
-    host.appendChild(result);
-
-    function showBanner(ref) {
-      if (!ref) {
-        banner.hidden = true;
-        return;
-      }
-      banner.hidden = false;
-      banner.innerHTML =
-        '<span class="ref-banner-dot" aria-hidden="true"></span>' +
-        "Você chegou por indicação de <strong>" +
-        ref.name.replace(/[<>&]/g, "") +
-        "</strong>. Obrigado!";
+  function show(el, on) {
+    if (!el) return;
+    if (on) {
+      el.hidden = false;
+      el.style.display = "";
+      el.removeAttribute("hidden");
+    } else {
+      el.hidden = true;
+      el.setAttribute("hidden", "");
     }
+  }
 
-    var active = captureFromURL();
-    showBanner(active);
-    patchWaLinks(document);
+  function bindWidget(host) {
+    if (!host || host.getAttribute("data-ref-bound") === "1") return;
+    host.setAttribute("data-ref-bound", "1");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var name = sanitizeName(form.querySelector("#ref-name").value);
-      var phone = form.querySelector("#ref-phone").value;
-      if (!name) {
-        form.querySelector("#ref-name").focus();
-        return;
+    try {
+      var theme = host.getAttribute("data-theme") || "default";
+      host.classList.add("ref-widget");
+      host.setAttribute("data-theme", theme);
+
+      var parts = ensureStructure(host);
+      var form = parts.form;
+      var result = parts.result;
+      if (!form || !result) return;
+
+      var site =
+        host.getAttribute("data-site") ||
+        host.getAttribute("data-site-name") ||
+        "este site";
+      var nameInput = form.querySelector("[data-ref-name]") || form.querySelector('input[type="text"]');
+      var phoneInput = form.querySelector("[data-ref-phone]") || form.querySelector('input[type="tel"]');
+      var genBtn = form.querySelector("[data-ref-generate]");
+      var errEl = form.querySelector("[data-ref-error]");
+      var linkInput = result.querySelector("[data-ref-link]") || result.querySelector('input[type="text"]');
+      var banner = host.querySelector("[data-ref-banner]");
+
+      function setError(msg) {
+        if (!errEl) return;
+        if (msg) {
+          errEl.textContent = msg;
+          show(errEl, true);
+        } else {
+          errEl.textContent = "";
+          show(errEl, false);
+        }
       }
-      var url = buildShareUrl(name, phone);
-      var linkInput = result.querySelector("#ref-link");
-      linkInput.value = url;
-      result.hidden = false;
-      form.hidden = true;
 
-      var waShare =
-        "https://wa.me/?text=" +
-        encodeURIComponent(
-          "Olá! Indico o " +
-            site +
-            " — use meu link para conhecer e, se fechar, eu recebo comissão:\n\n" +
-            url
-        );
-      result.querySelector('[data-act="wa"]').setAttribute("href", waShare);
+      function generate() {
+        setError("");
+        var name = sanitizeName(nameInput ? nameInput.value : "");
+        var phone = phoneInput ? phoneInput.value : "";
+        if (!name) {
+          setError("Digite seu nome para gerar o link.");
+          if (nameInput) nameInput.focus();
+          return;
+        }
+        var url = buildShareUrl(name, phone);
+        if (linkInput) {
+          linkInput.value = url;
+          try {
+            linkInput.focus();
+            linkInput.select();
+          } catch (e) { /* ignore */ }
+        }
+        var waA = result.querySelector('[data-act="wa"]');
+        if (waA) {
+          waA.setAttribute(
+            "href",
+            "https://wa.me/?text=" +
+              encodeURIComponent(
+                "Olá! Indico o " +
+                  site +
+                  " — use meu link (comissão 20% por venda):\n\n" +
+                  url
+              )
+          );
+        }
+        show(form, false);
+        show(result, true);
+        // feedback visual
+        host.classList.add("ref-done");
+      }
 
-      try {
-        linkInput.focus();
-        linkInput.select();
-      } catch (err) { /* ignore */ }
-    });
+      if (genBtn) {
+        genBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          generate();
+        });
+      }
 
-    result.addEventListener("click", function (e) {
-      var btn = e.target.closest("[data-act]");
-      if (!btn) return;
-      var act = btn.getAttribute("data-act");
-      if (act === "copy") {
-        var v = result.querySelector("#ref-link").value;
-        copyText(v).then(
-          function () {
-            btn.textContent = "Copiado!";
-            setTimeout(function () {
-              btn.textContent = "Copiar";
-            }, 1800);
-          },
-          function () {
-            prompt("Copie o link:", v);
+      // Enter no campo nome também gera (sem submit de form)
+      if (nameInput) {
+        nameInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            generate();
           }
-        );
-      } else if (act === "again") {
-        result.hidden = true;
-        form.hidden = false;
-        form.querySelector("#ref-name").focus();
+        });
       }
-    });
+      if (phoneInput) {
+        phoneInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            generate();
+          }
+        });
+      }
+
+      // Se ainda for <form>, bloqueia submit nativo (CSP form-action 'none')
+      if (form.tagName === "FORM") {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          generate();
+        });
+      }
+
+      result.addEventListener("click", function (e) {
+        var btn = e.target.closest ? e.target.closest("[data-act]") : null;
+        if (!btn) return;
+        var act = btn.getAttribute("data-act");
+        if (act === "copy") {
+          e.preventDefault();
+          var v = linkInput ? linkInput.value : "";
+          if (!v) return;
+          copyText(v).then(
+            function () {
+              var prev = btn.textContent;
+              btn.textContent = "Copiado!";
+              setTimeout(function () {
+                btn.textContent = prev || "Copiar";
+              }, 1800);
+            },
+            function () {
+              window.prompt("Copie o link:", v);
+            }
+          );
+        } else if (act === "again") {
+          e.preventDefault();
+          show(result, false);
+          show(form, true);
+          host.classList.remove("ref-done");
+          if (nameInput) nameInput.focus();
+        }
+      });
+
+      // banner de visitante indicado
+      var active = captureFromURL();
+      if (banner && active) {
+        banner.innerHTML =
+          '<span class="ref-banner-dot" aria-hidden="true"></span>' +
+          "Você chegou por indicação de <strong>" +
+          escapeHtml(active.name) +
+          "</strong>. Obrigado!";
+        show(banner, true);
+      }
+
+      patchWaLinks(document);
+    } catch (err) {
+      try {
+        host.setAttribute("data-ref-error", String(err && err.message ? err.message : err));
+      } catch (e2) { /* ignore */ }
+    }
   }
 
   function init() {
-    captureFromURL();
-    patchWaLinks(document);
+    try {
+      captureFromURL();
+      patchWaLinks(document);
 
-    document.addEventListener(
-      "click",
-      function (e) {
-        var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
-        if (!a) return;
-        var next = withReferrerInWaUrl(a.getAttribute("href"));
-        if (next) a.setAttribute("href", next);
-      },
-      true
-    );
+      document.addEventListener(
+        "click",
+        function (e) {
+          var t = e.target;
+          var a = t && t.closest ? t.closest('a[href*="wa.me"]') : null;
+          if (!a) return;
+          var next = withReferrerInWaUrl(a.getAttribute("href"));
+          if (next) a.setAttribute("href", next);
+        },
+        true
+      );
 
-    var hosts = document.querySelectorAll("[data-referral]");
-    for (var i = 0; i < hosts.length; i++) mountWidget(hosts[i]);
+      var hosts = document.querySelectorAll("[data-referral]");
+      for (var i = 0; i < hosts.length; i++) bindWidget(hosts[i]);
 
-    // Links WA injetados depois (SPA / render dinâmico)
-    if (typeof MutationObserver !== "undefined") {
-      var mo = new MutationObserver(function () {
-        patchWaLinks(document);
-      });
-      mo.observe(document.documentElement, { childList: true, subtree: true });
+      // re-tenta se o DOM for injetado depois (SPA)
+      if (typeof MutationObserver !== "undefined") {
+        var scheduled = false;
+        var mo = new MutationObserver(function () {
+          if (scheduled) return;
+          scheduled = true;
+          setTimeout(function () {
+            scheduled = false;
+            var list = document.querySelectorAll("[data-referral]:not([data-ref-bound='1'])");
+            for (var j = 0; j < list.length; j++) bindWidget(list[j]);
+            patchWaLinks(document);
+          }, 50);
+        });
+        mo.observe(document.documentElement, { childList: true, subtree: true });
+      }
+    } catch (e) {
+      if (typeof console !== "undefined" && console.error) {
+        console.error("[ContbitReferral]", e);
+      }
     }
   }
 
-  var api = {
+  global.ContbitReferral = {
     getReferrer: getReferrer,
     getReferrerLabel: getReferrerLabel,
     appendReferrerToText: appendReferrerToText,
@@ -332,11 +450,14 @@
     init: init
   };
 
-  global.ContbitReferral = api;
-
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
+  // fallback se defer/ordem de scripts atrasar o DOM
+  global.addEventListener("load", function () {
+    var pending = document.querySelectorAll("[data-referral]:not([data-ref-bound='1'])");
+    if (pending.length) init();
+  });
 })(typeof window !== "undefined" ? window : this);

@@ -190,6 +190,27 @@
   color: var(--ref-accent2);
   font-weight: 600;
 }
+.ref-error {
+  margin: 0;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.ref-widget.ref-done {
+  border-color: color-mix(in srgb, var(--ref-accent) 45%, transparent);
+}
+.ref-form[hidden],
+.ref-result[hidden],
+.ref-banner[hidden],
+.ref-error[hidden] {
+  display: none !important;
+}
+.ref-result:not([hidden]) {
+  display: grid;
+}
+.ref-form:not([hidden]) {
+  display: grid;
+}
 
 /* Seção wrapper usada nos sites */
 .ref-section {

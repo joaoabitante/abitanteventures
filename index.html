@@ -7,7 +7,7 @@
 
 <!-- Segurança (GitHub Pages): o host NAO aplica _headers HTTP — a protecao efetiva no github.io
      e esta meta CSP + referrer. No Cloudflare Pages o arquivo _headers complementa com HSTS/XFO/etc. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'none'; form-action 'none'; connect-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'none'; form-action 'self'; connect-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="x-dns-prefetch-control" content="off">
 <meta name="robots" content="index, follow">
@@ -1227,7 +1227,37 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
       <h2>Indique e receba 20% por venda</h2>
       <p>Crie um link com o seu nome. Quando a pessoa entrar por ele e fechar, você recebe <strong>20% de comissão por venda</strong> — a indicação aparece no WhatsApp.</p>
     </div>
-    <div class="reveal" data-referral data-site="João Abitante Ventures" data-wa="5511994105856" data-theme="abitante" data-commission="Comissão: 20% por venda."></div>
+    <div class="reveal ref-widget" data-referral data-site="João Abitante Ventures" data-wa="5511994105856" data-theme="abitante" data-commission="Comissão: 20% por venda.">
+      <h2 class="ref-title">Indique e ganhe comissão</h2>
+      <p class="ref-lead">Crie seu link de indicação. Quando alguém entrar por ele e falar no WhatsApp, o nome de quem indicou aparece na mensagem. <strong class="ref-comm">Comissão: 20% por venda.</strong></p>
+      <div class="ref-banner" data-ref-banner hidden></div>
+      <div class="ref-form" data-ref-form>
+        <div class="ref-field">
+          <label for="ja-ref-name">Seu nome (aparece no WhatsApp)</label>
+          <input id="ja-ref-name" data-ref-name type="text" maxlength="60" autocomplete="name" placeholder="Ex.: Maria Silva" />
+        </div>
+        <div class="ref-field">
+          <label for="ja-ref-phone">Seu WhatsApp <span class="ref-opt">(opcional)</span></label>
+          <input id="ja-ref-phone" data-ref-phone type="tel" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ex.: 11 99410-5856" />
+        </div>
+        <div class="ref-actions">
+          <button type="button" class="ref-btn ref-btn-primary" data-ref-generate>Gerar meu link</button>
+        </div>
+        <p class="ref-error" data-ref-error hidden></p>
+      </div>
+      <div class="ref-result" data-ref-result hidden>
+        <label for="ja-ref-link">Seu link de indicação</label>
+        <div class="ref-link-row">
+          <input id="ja-ref-link" data-ref-link type="text" readonly />
+          <button type="button" class="ref-btn ref-btn-primary" data-act="copy">Copiar</button>
+        </div>
+        <div class="ref-actions ref-actions-2">
+          <a class="ref-btn ref-btn-wa" data-act="wa" href="#" target="_blank" rel="noopener noreferrer">Compartilhar no WhatsApp</a>
+          <button type="button" class="ref-btn ref-btn-ghost" data-act="again">Gerar outro</button>
+        </div>
+        <p class="ref-hint">Quem abrir o link e clicar em WhatsApp enviará: “Indicado por: <em>Seu Nome</em>”.</p>
+      </div>
+    </div>
   </div>
 </section>
 <section id="contato">
