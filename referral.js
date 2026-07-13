@@ -1,11 +1,8 @@
-/*! Contbit Referral v3 — gera link direto para o WhatsApp com nome do indicador.
- * O link NÃO volta ao site: abre wa.me/5511994105856 com a mensagem pronta.
+/*! Contbit Referral v4 — link CURTO do site que abre o WhatsApp.
+ * Compartilha: https://seudominio/i.html?n=Nome&p=c
+ * (em vez do wa.me gigante com texto codificado)
  *
- * Mensagem:
- *   Boa tarde, vim da indicação de {NOME} referente a {PRODUTO}
- *   e aos seus projetos da A Hora da Elisão Fiscal · Contbit · Abitante Ventures · Autista Empreende.
- *
- * HTML: <div data-referral data-site="Contbit" data-product="Contbit" data-wa="5511994105856">
+ * HTML: <div data-referral data-product="Contbit" data-wa="5511994105856">
  */
 (function (global) {
   "use strict";
@@ -14,6 +11,16 @@
   var PROJECTS =
     "A Hora da Elisão Fiscal · Contbit · Abitante Ventures · Autista Empreende";
   var uid = 0;
+
+  var PRODUCT_CODE = {
+    Contbit: "c",
+    contbit: "c",
+    "A Hora da Elisão Fiscal": "e",
+    elisao: "e",
+    "Abitante Ventures": "a",
+    abitante: "a",
+    "Autista Empreende": "ae"
+  };
 
   function sanitizeName(raw) {
     return String(raw || "")
@@ -36,29 +43,57 @@
       .replace(/"/g, "&quot;");
   }
 
-  /** Texto que chega no WhatsApp do João */
+  function productCode(product) {
+    if (!product) return "";
+    if (PRODUCT_CODE[product]) return PRODUCT_CODE[product];
+    var k = String(product).toLowerCase();
+    if (k.indexOf("contbit") !== -1) return "c";
+    if (k.indexOf("elis") !== -1) return "e";
+    if (k.indexOf("abitante") !== -1) return "a";
+    if (k.indexOf("autista") !== -1) return "ae";
+    return "";
+  }
+
   function buildReferralMessage(name, product, indicatorPhone) {
     var n = sanitizeName(name) || "um parceiro";
     var prod = sanitizeName(product) || "";
     var msg =
       "Boa tarde, vim da indicação de " +
       n +
-      (prod
-        ? " referente a " + prod + " e aos seus projetos da " + PROJECTS
-        : " referente aos seus projetos da " + PROJECTS) +
+      (prod ? " referente a " + prod : "") +
+      " — projetos: " +
+      PROJECTS +
       ".";
     var ph = sanitizePhone(indicatorPhone);
     if (ph && ph.length >= 10) {
-      msg += "\n\nWhatsApp de quem indicou: " + ph;
+      msg += "\nWhatsApp de quem indicou: " + ph;
     }
     return msg;
   }
 
-  /** Link que a pessoa compartilha — abre o WhatsApp do João com o texto */
+  /** Link longo do WhatsApp (só uso interno / botão Abrir) */
   function buildWhatsAppLink(name, product, waNumber, indicatorPhone) {
     var wa = sanitizePhone(waNumber) || DEFAULT_WA;
     var text = buildReferralMessage(name, product, indicatorPhone);
     return "https://wa.me/" + wa + "?text=" + encodeURIComponent(text);
+  }
+
+  /**
+   * Link CURTO para compartilhar.
+   * Ex.: https://contbit.tax/i.html?n=Maria+Silva&p=c
+   */
+  function buildShortLink(name, product, indicatorPhone) {
+    var n = sanitizeName(name);
+    var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+    // garante barra final da pasta
+    if (base.slice(-1) !== "/") base += "/";
+    var u = new URL(base + "i.html");
+    u.searchParams.set("n", n);
+    var code = productCode(product);
+    if (code) u.searchParams.set("p", code);
+    var ph = sanitizePhone(indicatorPhone);
+    if (ph && ph.length >= 10) u.searchParams.set("t", ph);
+    return u.toString();
   }
 
   function copyText(text) {
@@ -102,50 +137,38 @@
     uid += 1;
     var id = "refw" + uid;
     var commission = host.getAttribute("data-commission") || "Comissão: 20% por venda.";
-    var theme = host.getAttribute("data-theme") || "default";
     host.classList.add("ref-widget");
-    host.setAttribute("data-theme", theme);
+    host.setAttribute("data-theme", host.getAttribute("data-theme") || "default");
 
     host.innerHTML =
       '<p class="ref-lead"><strong class="ref-comm">' +
       escapeHtml(commission) +
-      "</strong> Gere o link: quem clicar abre o WhatsApp já com o seu nome na indicação.</p>" +
+      "</strong> Gere um link curto: quem clicar abre o WhatsApp com a sua indicação.</p>" +
       '<div class="ref-form" data-ref-form>' +
-      '<div class="ref-field">' +
-      '<label for="' +
+      '<div class="ref-field"><label for="' +
       id +
-      '-name">Seu nome (aparece na mensagem do WhatsApp)</label>' +
+      '-name">Seu nome</label>' +
       '<input id="' +
       id +
-      '-name" data-ref-name type="text" maxlength="60" autocomplete="name" placeholder="Ex.: Maria Silva" />' +
-      "</div>" +
-      '<div class="ref-field">' +
-      '<label for="' +
+      '-name" data-ref-name type="text" maxlength="60" autocomplete="name" placeholder="Ex.: Maria Silva" /></div>' +
+      '<div class="ref-field"><label for="' +
       id +
-      '-phone">Seu WhatsApp <span class="ref-opt">(opcional — para pagar a comissão)</span></label>' +
+      '-phone">Seu WhatsApp <span class="ref-opt">(opcional)</span></label>' +
       '<input id="' +
       id +
-      '-phone" data-ref-phone type="tel" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ex.: 11 99410-5856" />' +
-      "</div>" +
-      '<div class="ref-actions">' +
-      '<button type="button" class="ref-btn ref-btn-primary" data-ref-generate>Gerar link do WhatsApp</button>' +
-      "</div>" +
-      '<p class="ref-error" data-ref-error hidden></p>' +
-      "</div>" +
+      '-phone" data-ref-phone type="tel" maxlength="20" inputmode="tel" placeholder="Ex.: 11 99410-5856" /></div>' +
+      '<div class="ref-actions"><button type="button" class="ref-btn ref-btn-primary" data-ref-generate>Gerar link curto</button></div>' +
+      '<p class="ref-error" data-ref-error hidden></p></div>' +
       '<div class="ref-result" data-ref-result hidden>' +
-      "<label>Seu link de indicação (abre o WhatsApp)</label>" +
-      '<div class="ref-link-row">' +
-      '<input data-ref-link type="text" readonly />' +
-      '<button type="button" class="ref-btn ref-btn-primary" data-act="copy">Copiar</button>' +
-      "</div>" +
+      "<label>Link curto de indicação</label>" +
+      '<div class="ref-link-row"><input data-ref-link type="text" readonly />' +
+      '<button type="button" class="ref-btn ref-btn-primary" data-act="copy">Copiar</button></div>' +
       '<div class="ref-actions ref-actions-2">' +
-      '<a class="ref-btn ref-btn-wa" data-act="open" href="#" target="_blank" rel="noopener noreferrer">Abrir no WhatsApp</a>' +
+      '<a class="ref-btn ref-btn-wa" data-act="open" href="#" target="_blank" rel="noopener noreferrer">Testar (WhatsApp)</a>' +
       '<a class="ref-btn ref-btn-wa" data-act="share" href="#" target="_blank" rel="noopener noreferrer">Enviar para alguém</a>' +
-      '<button type="button" class="ref-btn ref-btn-ghost" data-act="again">Gerar outro</button>' +
-      "</div>" +
-      '<p class="ref-hint">Quem clicar no link fala com João no WhatsApp com a mensagem: “Boa tarde, vim da indicação de <em>Seu Nome</em>…”</p>' +
-      '<p class="ref-preview" data-ref-preview hidden></p>' +
-      "</div>";
+      '<button type="button" class="ref-btn ref-btn-ghost" data-act="again">Gerar outro</button></div>' +
+      '<p class="ref-hint">Quem receber o link curto é levado ao WhatsApp com: “Boa tarde, vim da indicação de <em>Seu Nome</em>…”</p>' +
+      '<p class="ref-preview" data-ref-preview hidden></p></div>';
 
     return {
       form: host.querySelector("[data-ref-form]"),
@@ -158,9 +181,8 @@
     host.setAttribute("data-ref-bound", "1");
 
     try {
-      var theme = host.getAttribute("data-theme") || "default";
       host.classList.add("ref-widget");
-      host.setAttribute("data-theme", theme);
+      host.setAttribute("data-theme", host.getAttribute("data-theme") || "default");
 
       var parts = ensureStructure(host);
       var form = parts.form;
@@ -186,17 +208,13 @@
         result.querySelector('input[type="text"]');
       var preview = result.querySelector("[data-ref-preview]");
 
-      // Garante botões de ação se o HTML estático for antigo
-      if (!result.querySelector('[data-act="open"]')) {
-        var actions = result.querySelector(".ref-actions") || result;
-        var openA = document.createElement("a");
-        openA.className = "ref-btn ref-btn-wa";
-        openA.setAttribute("data-act", "open");
-        openA.setAttribute("target", "_blank");
-        openA.setAttribute("rel", "noopener noreferrer");
-        openA.href = "#";
-        openA.textContent = "Abrir no WhatsApp";
-        actions.appendChild(openA);
+      // labels do HTML estático antigo
+      var label = result.querySelector("label");
+      if (label && /link de indicação/i.test(label.textContent || "")) {
+        label.textContent = "Link curto de indicação";
+      }
+      if (genBtn && /whatsapp|meu link/i.test(genBtn.textContent || "")) {
+        genBtn.textContent = "Gerar link curto";
       }
 
       function setError(msg) {
@@ -215,44 +233,54 @@
         var name = sanitizeName(nameInput ? nameInput.value : "");
         var phone = phoneInput ? phoneInput.value : "";
         if (!name) {
-          setError("Digite seu nome para gerar o link do WhatsApp.");
+          setError("Digite seu nome para gerar o link.");
           if (nameInput) nameInput.focus();
           return;
         }
 
         var msg = buildReferralMessage(name, product, phone);
-        var url = buildWhatsAppLink(name, product, wa, phone);
+        var shortUrl = buildShortLink(name, product, phone);
+        var waUrl = buildWhatsAppLink(name, product, wa, phone);
 
         if (linkInput) {
-          linkInput.value = url;
+          linkInput.value = shortUrl;
           try {
             linkInput.focus();
             linkInput.select();
           } catch (e) { /* ignore */ }
         }
 
+        // Testar = abre WhatsApp já com a mensagem (para o indicador conferir)
         var openA = result.querySelector('[data-act="open"]');
-        if (openA) openA.setAttribute("href", url);
+        if (openA) {
+          openA.setAttribute("href", waUrl);
+          if (/abrir/i.test(openA.textContent || "")) {
+            openA.textContent = "Testar (WhatsApp)";
+          }
+        }
 
-        // "Enviar para alguém" = compartilhar o mesmo link wa.me (a pessoa repassa)
+        // Enviar = compartilha o LINK CURTO (não o wa.me enorme)
         var shareA = result.querySelector('[data-act="share"]');
         if (shareA) {
           shareA.setAttribute(
             "href",
             "https://wa.me/?text=" +
               encodeURIComponent(
-                "Olá! Use este link para falar com o João (indicação minha — comissão 20%):\n\n" +
-                  url
+                "Oi! Fale com o João por este link (indicação minha):\n" + shortUrl
               )
           );
         }
 
-        // botão antigo data-act=wa
         var waA = result.querySelector('[data-act="wa"]');
-        if (waA) waA.setAttribute("href", url);
+        if (waA) waA.setAttribute("href", shortUrl);
 
         if (preview) {
-          preview.textContent = "Prévia da mensagem: “" + msg + "”";
+          preview.innerHTML =
+            "<strong>Link curto:</strong> " +
+            escapeHtml(shortUrl) +
+            "<br><br><strong>Mensagem no WhatsApp:</strong> “" +
+            escapeHtml(msg) +
+            "”";
           show(preview, true);
         }
 
@@ -267,10 +295,6 @@
           e.stopPropagation();
           generate();
         });
-        // Atualiza texto do botão se HTML antigo
-        if (/gerar meu link/i.test(genBtn.textContent || "")) {
-          genBtn.textContent = "Gerar link do WhatsApp";
-        }
       }
 
       function onEnter(e) {
@@ -306,7 +330,7 @@
               }, 1800);
             },
             function () {
-              window.prompt("Copie o link do WhatsApp:", v);
+              window.prompt("Copie o link curto:", v);
             }
           );
         } else if (act === "again") {
@@ -360,6 +384,7 @@
   global.ContbitReferral = {
     buildReferralMessage: buildReferralMessage,
     buildWhatsAppLink: buildWhatsAppLink,
+    buildShortLink: buildShortLink,
     init: init
   };
 
