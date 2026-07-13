@@ -15,6 +15,11 @@
   border: 1px solid var(--ref-bd);
   background: var(--ref-bg);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  /* Nunca esconder o gerador de link (evita .reveal com opacity:0) */
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 .ref-widget[data-theme="contbit"] {
   --ref-accent: #e6bc55;

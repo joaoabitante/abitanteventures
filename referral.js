@@ -180,13 +180,9 @@
     host.setAttribute("data-theme", theme);
 
     host.innerHTML =
-      '<h2 class="ref-title">Indique e ganhe comissão</h2>' +
-      '<p class="ref-lead">Crie seu link de indicação. Quando alguém entrar por ele e falar no WhatsApp, ' +
-      "o nome de quem indicou aparece na mensagem — assim a comissão é rastreável." +
       (commission
-        ? ' <strong class="ref-comm">' + escapeHtml(commission) + "</strong>"
+        ? '<p class="ref-lead"><strong class="ref-comm">' + escapeHtml(commission) + "</strong></p>"
         : "") +
-      "</p>" +
       '<div class="ref-banner" data-ref-banner hidden></div>' +
       '<div class="ref-form" data-ref-form>' +
       '<div class="ref-field">' +
