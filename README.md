@@ -1,4 +1,7 @@
-# João Abitante Ventures
+﻿# João Abitante Ventures
+
+> **Hospedagem:** este projeto **nao** faz deploy no Cloudflare Workers/Pages.
+> Plataforma principal: **Vercel**. Cloudflare, se usada, e apenas DNS (proxy cinza).
 
 Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA, aberto a **PJ** e **CLT**.
 

@@ -1,0 +1,7 @@
+# Cloudflare desativado - plataforma: Vercel
+.wrangler/
+.mf/
+wrangler.toml
+wrangler.json
+wrangler.jsonc
+.dev.vars
