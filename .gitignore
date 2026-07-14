@@ -8,3 +8,7 @@ wrangler.jsonc
 .vercel
 .env*.local
 node_modules/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
