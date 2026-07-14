@@ -1,4 +1,45 @@
+# Descoberta: Google + assistentes de IA
 User-agent: *
+Allow: /
+
+# Bots de pesquisa e IA — permitir indexação do portfólio
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://joao.abitante.net/sitemap.xml
