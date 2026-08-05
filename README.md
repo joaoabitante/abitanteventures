@@ -3,7 +3,7 @@
 > **Hospedagem:** este projeto **nao** faz deploy no Cloudflare Workers/Pages.
 > Plataforma principal: **Vercel**. Cloudflare, se usada, e apenas DNS (proxy cinza).
 
-Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA, aberto a **PJ** e **CLT**.
+Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA. Desde 05/08/2026, **Analista Financeiro na Caldeira OTC**; atende como **PJ** pela Contbit na janela das **19h às 23h**, ao lado do contador **João Ricardo Abitante** (CRC-1SP 139213, [jrabitante.com.br](https://jrabitante.com.br/)).
 
 Posicionamento: vender o perfil para fintechs, escritórios e grandes empresas (compliance, tributário, produto TaxTech).
 

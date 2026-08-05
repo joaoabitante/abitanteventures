@@ -14,8 +14,17 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 - Alinhados ao novo posicionamento: `<title>`, meta description, keywords, OpenGraph,
   Twitter Card, faixa de CTA, seção de contato, placeholder do formulário, menu mobile,
   botão do hero, card "Consultoria" e parágrafo do Sobre.
-- Mantida de propósito a menção a "PJ ou CLT" na linha do tempo: é registro histórico
-  do que o site era em 10/07/2026.
+- Removida a última menção a "PJ ou CLT", que ainda restava na linha do tempo
+  (marco de 10/07/2026). O site não fala mais em vaga de empresa em lugar nenhum.
+- Card do **João Ricardo Abitante** com os dados reais de jrabitante.com.br:
+  **CRC-1SP 139213**, serviços (abertura e regularização de CNPJ, contabilidade
+  mensal, Simples Nacional, folha/pró-labore/INSS, planejamento tributário, IRPF e
+  IRPJ) e atendimento digital em todo o estado de São Paulo, com link para o site.
+- `README.md` atualizado com o cargo atual e a composição da Contbit.
+
+### Corrigido
+- `</article>` órfã na seção de portfólio (bug anterior a esta entrega): o HTML
+  tinha 10 aberturas para 11 fechamentos.
 
 ## [Não lançado]
 ### Adicionado
