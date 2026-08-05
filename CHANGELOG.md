@@ -8,8 +8,9 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 ### Adicionado
 - Seção **Caldeira OTC** (`#caldeira`): contratação como **Analista Financeiro** na
   Caldeira Negócios (mesa de balcão de Bitcoin), foto com o uniforme da empresa
-  (JPEG 660×883 embutido em base64), **linha do tempo** de junho a julho de 2026 até
-  o "sim" e um texto de **intraempreendedorismo para pessoas autistas**.
+  (JPEG 660×883 embutido em base64), **linha do tempo** de 2016 até o "sim"
+  (03/08/2026) e o primeiro dia de trabalho (05/08/2026), e um texto de
+  **intraempreendedorismo para pessoas autistas**.
 - Link "Caldeira OTC" no menu (desktop e mobile) e badge no bloco Sobre.
 
 ### Alterado
