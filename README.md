@@ -50,7 +50,8 @@ Se for usar um domínio (ex.: `joaoabitante.com`):
 
 - **Contador de visualizações:** procure por `data-target="68358"` no `index.html` (aparece duas vezes) e troque o número.
 - **E-mail do formulário:** procure por `mailto:contbit@gmail.com` e ajuste se necessário.
-- **Trocar a foto:** a imagem está embutida em base64 dentro da tag `<img>` na seção "Sobre". Para trocar, gere o base64 da nova foto e substitua o conteúdo de `src`.
+- **Trocar a foto:** a imagem está embutida em base64 dentro da tag `<img>` na seção "Sobre". Para trocar, gere o base64 da nova foto e substitua o conteúdo de `src`. O mesmo vale para a foto da seção `#caldeira` (`.nc-card .photo img`) — otimize antes (JPEG ~660 px de largura, qualidade 82) para não inflar o `index.html`.
+- **Cargo atual:** `#caldeira` (texto e `figcaption`), a faixa `.avail-banner` do hero, o badge em "Sobre" e o `worksFor`/`jobTitle` do JSON-LD `Person`.
 
 ## Segurança e privacidade
 
