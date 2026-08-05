@@ -8,7 +8,7 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 ### Alterado
 - `#contratar` deixou de ser "Duas formas de trabalhar comigo (PJ ou CLT)" e virou
   **"Como me contratar hoje"**: card **PJ · Contbit** com a janela declarada das
-  **19h às 21h** e card de equipe com o contador **João Ricardo Abitante**, que cobre
+  **19h às 23h** e card de equipe com o contador **João Ricardo Abitante**, que cobre
   a rotina fora dessa janela. O card CLT saiu — a vaga já foi preenchida.
 - CSS `.hire-card.clt` renomeado para `.hire-card.dupla`.
 - Alinhados ao novo posicionamento: `<title>`, meta description, keywords, OpenGraph,
