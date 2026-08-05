@@ -5,6 +5,19 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
 ## [Não lançado]
+### Alterado
+- `#contratar` deixou de ser "Duas formas de trabalhar comigo (PJ ou CLT)" e virou
+  **"Como me contratar hoje"**: card **PJ · Contbit** com a janela declarada das
+  **19h às 21h** e card de equipe com o contador **João Ricardo Abitante**, que cobre
+  a rotina fora dessa janela. O card CLT saiu — a vaga já foi preenchida.
+- CSS `.hire-card.clt` renomeado para `.hire-card.dupla`.
+- Alinhados ao novo posicionamento: `<title>`, meta description, keywords, OpenGraph,
+  Twitter Card, faixa de CTA, seção de contato, placeholder do formulário, menu mobile,
+  botão do hero, card "Consultoria" e parágrafo do Sobre.
+- Mantida de propósito a menção a "PJ ou CLT" na linha do tempo: é registro histórico
+  do que o site era em 10/07/2026.
+
+## [Não lançado]
 ### Adicionado
 - Seção **Caldeira OTC** (`#caldeira`): contratação como **Analista Financeiro** na
   Caldeira Negócios (mesa de balcão de Bitcoin), foto com o uniforme da empresa
