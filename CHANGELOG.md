@@ -4,6 +4,11 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
+## [2026-10-26]
+### Adicionado
+- Índigo 1.7 (indigo-gba.vercel.app) e Deck Pokémon TCG (deck.joaoabitante.net)
+  no portfólio, no diretório `sites.html`, no `llms.txt` e nos dados estruturados.
+
 ## [Não lançado]
 ### Alterado
 - `#contratar` deixou de ser "Duas formas de trabalhar comigo (PJ ou CLT)" e virou
