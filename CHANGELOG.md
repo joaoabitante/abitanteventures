@@ -4,6 +4,17 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
+## [2026-10-28]
+### Alterado
+- Portfólio (`#projetos`) em dois blocos: trabalho (TaxTech, compliance e consultoria)
+  e laboratório (Índigo, Deck e Copa). Os produtos aparecem antes do relato do escritório.
+- Cada card segue a mesma estrutura: ícone, categoria, título, texto, chips e, no rodapé,
+  o domínio com "Abrir". O selo deixa de ficar por cima do título.
+- Os três destaques (Contbit, Parcelamento Federal e Matriz de Risco PLD/FT) ficam na primeira fileira.
+
+### Corrigido
+- `sites.html`: `numberOfItems` do JSON-LD estava 12 para uma lista de 14 endereços.
+
 ## [2026-10-26]
 ### Adicionado
 - Índigo 1.7 (indigo-gba.vercel.app) e Deck Pokémon TCG (deck.joaoabitante.net)
