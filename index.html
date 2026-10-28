@@ -431,6 +431,58 @@ section{padding:110px 0;position:relative}
 .card:hover .visit{gap:13px}
 .card .visit svg{transition:.25s}
 
+/* ============ PORTFÓLIO ============ */
+#projetos .proj-group + .proj-group{margin-top:46px}
+#projetos .proj-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px 28px;
+  margin:0 0 18px;flex-wrap:wrap;
+}
+#projetos .proj-kicker{
+  display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--cyan);margin-bottom:6px;
+}
+#projetos .proj-head h3{font-size:clamp(1.25rem,2vw,1.5rem);margin:0}
+#projetos .proj-head p{color:var(--txt-dim);font-size:.95rem;margin:0;max-width:42ch}
+#projetos .cards-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#projetos .card{padding:22px 22px 18px}
+#projetos .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;min-height:50px}
+#projetos .card-top .icon{margin-bottom:0;flex:none}
+#projetos .card .flag{
+  position:static;top:auto;right:auto;max-width:11rem;text-align:center;line-height:1.25;
+}
+#projetos .card .cat{margin-bottom:8px}
+#projetos .card h3{font-size:1.2rem;line-height:1.25;margin-bottom:8px;min-height:2.5em}
+#projetos .card > p{flex:1;margin-bottom:0;font-size:.94rem}
+#projetos .card-bottom{margin-top:auto;display:flex;flex-direction:column;padding-top:14px}
+#projetos .case-meta{margin:0 0 12px}
+#projetos .card-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:0;padding-top:14px;border-top:1px solid var(--stroke);
+}
+#projetos .host{
+  flex:1;min-width:0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.75rem;color:var(--txt-dim);line-height:1.35;overflow-wrap:anywhere;
+}
+#projetos .card .visit{flex:none}
+#projetos a.card:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+#projetos .proj-more{margin:22px 0 0;color:var(--txt-dim);font-size:.95rem}
+#projetos .proj-more a{color:var(--sky);border-bottom:1px solid rgba(56,189,248,.35)}
+#projetos .proj-more a:hover{color:var(--txt)}
+#projetos .proj-more a:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+#projetos .case-spotlight{margin-top:48px;margin-bottom:0}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+@media(max-width:980px){
+  #projetos .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  #projetos .cards-grid{grid-template-columns:1fr}
+  #projetos .card h3{min-height:0}
+}
+
 /* ============ ESPECIALIDADES ============ */
 .skills-grid{display:flex;flex-wrap:wrap;gap:12px}
 .skill{
@@ -1277,7 +1329,259 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
     <div class="section-head reveal">
       <span class="tag">Portfólio · prova de trabalho</span>
       <h2>O que construí (e está no ar)</h2>
-      <p>Prova de trabalho: produtos TaxTech no ar e, antes disso, <strong>escritório com 30+ clientes</strong> e 10 anos de assessoria a pessoas do ecossistema cripto (ligadas à Foxbit). Clique e use o que está publicado.</p>
+      <p>Produtos no ar, em dois blocos: o trabalho (TaxTech, compliance e consultoria) e o laboratório (consoles, cartas e Copa). Antes disso, <strong>escritório com 30+ clientes</strong> e 10 anos de assessoria a pessoas do ecossistema cripto (ligadas à Foxbit). Clique e use o que está publicado.</p>
+    </div>
+
+    <div class="proj-group" id="projetos-trabalho">
+      <div class="proj-head reveal">
+        <div>
+          <span class="proj-kicker">Trabalho · 12 no ar</span>
+          <h3>TaxTech, compliance e consultoria</h3>
+        </div>
+        <p>O que um escritório, uma fintech ou um time de compliance pode abrir agora.</p>
+      </div>
+      <div class="cards-grid">
+      <a class="card featured reveal" href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/><path d="M9 9h6v6H9z"/></svg></div>
+          <span class="flag">Carro-chefe</span>
+        </div>
+        <div class="cat">Para escritórios de contabilidade</div>
+        <h3>Contbit</h3>
+        <p>Plataforma para escritórios com a marca do cliente: portal, automação e simuladores — TaxTech construído e operado com IA, com rigor contábil.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">IA + SaaS</span><span class="case-chip">White-label</span><span class="case-chip">Produto</span></div>
+        <span class="card-foot">
+          <span class="host">contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card featured reveal" href="https://parcelamento.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="url(#pfGrad)"/><defs><linearGradient id="pfGrad" x1="8" y1="6" x2="56" y2="58"><stop stop-color="#22d57a"/><stop offset="1" stop-color="#0a4a30"/></linearGradient></defs><rect x="14" y="38" width="9" height="12" rx="2" fill="#fff" opacity=".9"/><rect x="27.5" y="29.5" width="9" height="20.5" rx="2" fill="#fff"/><rect x="41" y="19" width="9" height="31" rx="2" fill="#fff"/></svg></div>
+          <span class="flag">Lançamento</span>
+        </div>
+        <div class="cat">TaxTech · elisão fiscal</div>
+        <h3>Parcelamento Federal</h3>
+        <p>Simulador anônimo: parcelamento e reparcelamento do Simples e MEI (10%/20%), Transação PGFN, e-CAC e IRPF. SELIC oficial.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Simples</span><span class="case-chip">MEI</span><span class="case-chip">Reparcelamento</span><span class="case-chip">PGFN</span><span class="case-chip">SELIC</span><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">parcelamento.contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card featured reveal" href="https://kyc.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="url(#kycGrad)"/><defs><linearGradient id="kycGrad" x1="8" y1="6" x2="56" y2="58"><stop stop-color="#3d8be8"/><stop offset="1" stop-color="#07223f"/></linearGradient></defs><path d="M32 15l14 5v12c0 9-6 15-14 18-8-3-14-9-14-18V20l14-5z" fill="#fff" opacity=".95"/><path d="M25 33l5 5 10-11" stroke="#1b6fd0" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <span class="flag">Lançamento</span>
+        </div>
+        <div class="cat">Compliance · PLD/FT</div>
+        <h3>Matriz de Risco PLD/FT</h3>
+        <p>Avalie o risco de um cliente em 9 fatores ponderados e gere o relatório de diligência. Roda inteiro no navegador, sem cadastro e sem enviar dado nenhum.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">PLD/FT</span><span class="case-chip">KYC</span><span class="case-chip">Coaf</span><span class="case-chip">PEP</span><span class="case-chip">GAFI</span><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">kyc.contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 7h6M9 11h6M9 15h4"/><path d="M5 3h14a1 1 0 011 1v16a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/><circle cx="17.5" cy="6.5" r="3.5" fill="var(--bg)"/><path d="M16 6.5l1 1 2-2"/></svg></div>
+        </div>
+        <div class="cat">TaxTech · Elisão Fiscal</div>
+        <h3>A Hora da Elisão Fiscal</h3>
+        <p>Compare regimes e a Reforma Tributária — anônimo, no navegador. Ferramenta de decisão para empresários e contadores.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Reforma</span><span class="case-chip">Simulador</span><span class="case-chip">TaxTech</span><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">elisaofiscal.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://verificar.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+        </div>
+        <div class="cat">Reforma Tributária · NF-e</div>
+        <h3>Verificador cClassTrib</h3>
+        <p>Valide o cClassTrib do XML da NF-e (IBS/CBS), de graça.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">ContBit</span><span class="case-chip">NF-e</span><span class="case-chip">IBS/CBS</span></div>
+        <span class="card-foot">
+          <span class="host">verificar.contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://mei.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h4"/></svg></div>
+        </div>
+        <div class="cat">Simulador MEI · Inclusão</div>
+        <h3>Simulador Financeiro MEI</h3>
+        <p>Simule o dia a dia financeiro do MEI com objetividade.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">MEI</span><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">mei.contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://app.contbit.tax/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        </div>
+        <div class="cat">Plataforma de atendimento</div>
+        <h3>App ContBit</h3>
+        <p>Portal de atendimento contábil.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">app.contbit.tax</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://mundo.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        </div>
+        <div class="cat">Global Tax Intelligence</div>
+        <h3>Mundial Tax</h3>
+        <p>Mapa-múndi interativo da tributação internacional — inteligência fiscal global em formato de produto.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Global tax</span><span class="case-chip">Produto</span><span class="case-chip">ContBit</span></div>
+        <span class="card-foot">
+          <span class="host">mundo.elisaofiscal.net</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://premio.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <span class="flag">Novo lançamento</span>
+        </div>
+        <div class="cat">Cripto · Arbitragem · Open source</div>
+        <h3>Prêmio Cripto</h3>
+        <p>Monitor ao vivo do prêmio (spread %) entre exchanges — kimchi premium, alertas e calculadora de IR (nacional × exterior). Prova de domínio fiscal + produto no navegador.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Cripto</span><span class="case-chip">IR</span><span class="case-chip">Open source</span><span class="case-chip">Elisão Fiscal</span></div>
+        <span class="card-foot">
+          <span class="host">premio.elisaofiscal.net</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://nr1.abitante.net/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
+        </div>
+        <div class="cat">NeuroCompliance</div>
+        <h3>NeuroCompliance</h3>
+        <p>Diagnóstico NR-1 e maturidade neuroinclusiva — anônimo, no navegador.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">NR-1</span><span class="case-chip">Inclusão</span></div>
+        <span class="card-foot">
+          <span class="host">nr1.abitante.net</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://hashrateconsultoria.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+        </div>
+        <div class="cat">Consultoria Estratégica</div>
+        <h3>Hash Rate Consultoria</h3>
+        <p>Consultoria financeira e contábil com foco em clareza e decisão — o lado boutique do meu trabalho de assessoria.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Consultoria</span><span class="case-chip">Financeiro</span></div>
+        <span class="card-foot">
+          <span class="host">hashrateconsultoria.com.br</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://autistaempreende.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        </div>
+        <div class="cat">Impacto Social</div>
+        <h3>Autista Empreende</h3>
+        <p>Iniciativa de impacto para o autista que empreende.</p>
+        <div class="card-bottom">
+        <span class="card-foot">
+          <span class="host">autistaempreende.com.br</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      </div>
+    </div>
+
+    <div class="proj-group" id="projetos-laboratorio">
+      <div class="proj-head reveal">
+        <div>
+          <span class="proj-kicker">Fora do fiscal · 3 no ar</span>
+          <h3>Laboratório</h3>
+        </div>
+        <p>Consoles, cartas e Copa. O mesmo tipo de produto no navegador, sem ser fiscal.</p>
+      </div>
+      <div class="cards-grid">
+      <a class="card reveal" href="https://indigo-gba.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
+        </div>
+        <div class="cat">App · consoles</div>
+        <h3>Índigo</h3>
+        <p>Emulador 1.7, de 25/10/2026: Mega Drive, PC Engine e os consoles anteriores. Roda no navegador e baixa para Windows e Android.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">1.7.0</span><span class="case-chip">Windows</span><span class="case-chip">Android</span></div>
+        <span class="card-foot">
+          <span class="host">indigo-gba.vercel.app</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://deck.joaoabitante.net/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg></div>
+        </div>
+        <div class="cat">Pokémon TCG</div>
+        <h3>Deck Pokémon TCG</h3>
+        <p>Monte e valide decks de Pokémon TCG. O meta é atualizado todo dia.</p>
+        <div class="card-bottom">
+        <div class="case-meta"><span class="case-chip">Standard</span><span class="case-chip">Expanded</span><span class="case-chip">Meta diário</span></div>
+        <span class="card-foot">
+          <span class="host">deck.joaoabitante.net</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      <a class="card reveal" href="https://copa.abitante.net" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z"/></svg></div>
+        </div>
+        <div class="cat">Sports Analytics</div>
+        <h3>Copa 2026</h3>
+        <p>Experiência interativa da Copa — projeto de produto e conteúdo.</p>
+        <div class="card-bottom">
+        <span class="card-foot">
+          <span class="host">copa.abitante.net</span>
+          <span class="visit">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="sr-only"> (site externo)</span></span>
+        </span>
+        </div>
+      </a>
+      </div>
+      <p class="proj-more reveal">A lista completa dos endereços está em <a href="/sites.html">sites.html</a>.</p>
     </div>
 
     <article class="case-spotlight reveal" id="case-confianca-base" aria-labelledby="conf-base-title">
@@ -1310,152 +1614,9 @@ footer{border-top:1px solid var(--stroke);padding:64px 0 32px;background:rgba(5,
         <a class="btn btn-ghost" href="#recomendacao" style="align-self:flex-start">Ver carta →</a>
       </aside>
     </article>
-
-    <div class="cards-grid">
-
-      <a class="card featured reveal" href="https://contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">Carro-chefe</span>
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <div class="cat">Para escritórios de contabilidade</div>
-        <div class="case-meta"><span class="case-chip">IA + SaaS</span><span class="case-chip">White-label</span><span class="case-chip">Produto</span></div>
-        <h3>Contbit</h3>
-        <p>Plataforma para escritórios com a marca do cliente: portal, automação e simuladores — TaxTech construído e operado com IA, com rigor contábil.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      
-      <a class="card featured reveal" href="https://parcelamento.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">Lançamento</span>
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="url(#pfGrad)"/><defs><linearGradient id="pfGrad" x1="8" y1="6" x2="56" y2="58"><stop stop-color="#22d57a"/><stop offset="1" stop-color="#0a4a30"/></linearGradient></defs><rect x="14" y="38" width="9" height="12" rx="2" fill="#fff" opacity=".9"/><rect x="27.5" y="29.5" width="9" height="20.5" rx="2" fill="#fff"/><rect x="41" y="19" width="9" height="31" rx="2" fill="#fff"/></svg></div>
-        <div class="cat">TaxTech · elisão fiscal</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <div class="case-meta"><span class="case-chip">Simples</span><span class="case-chip">MEI</span><span class="case-chip">Reparcelamento</span><span class="case-chip">PGFN</span><span class="case-chip">SELIC</span></div>
-        <h3>Parcelamento Federal</h3>
-        <p>Simulador anônimo: parcelamento e reparcelamento do Simples e MEI (10%/20%), Transação PGFN, e-CAC e IRPF. SELIC oficial · parcelamento.contbit.tax</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card featured reveal" href="https://kyc.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">Lançamento</span>
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="url(#kycGrad)"/><defs><linearGradient id="kycGrad" x1="8" y1="6" x2="56" y2="58"><stop stop-color="#3d8be8"/><stop offset="1" stop-color="#07223f"/></linearGradient></defs><path d="M32 15l14 5v12c0 9-6 15-14 18-8-3-14-9-14-18V20l14-5z" fill="#fff" opacity=".95"/><path d="M25 33l5 5 10-11" stroke="#1b6fd0" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <div class="cat">Compliance · PLD/FT</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <div class="case-meta"><span class="case-chip">PLD/FT</span><span class="case-chip">KYC</span><span class="case-chip">Coaf</span><span class="case-chip">PEP</span><span class="case-chip">GAFI</span></div>
-        <h3>Matriz de Risco PLD/FT</h3>
-        <p>Avalie o risco de um cliente em 9 fatores ponderados e gere o relatório de diligência. Roda inteiro no navegador, sem cadastro e sem enviar dado nenhum · kyc.contbit.tax</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-<a class="card reveal" href="https://premio.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">Novo lançamento</span>
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <div class="cat">Cripto · Arbitragem · Open source</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Ecossistema Elisão Fiscal</span>
-        <h3>Prêmio Cripto</h3>
-        <div class="case-meta"><span class="case-chip">Cripto</span><span class="case-chip">IR</span><span class="case-chip">Open source</span></div>
-        <p>Monitor ao vivo do prêmio (spread %) entre exchanges — kimchi premium, alertas e calculadora de IR (nacional × exterior). Prova de domínio fiscal + produto no navegador.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://hashrateconsultoria.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
-        <div class="cat">Consultoria Estratégica</div>
-        <div class="case-meta"><span class="case-chip">Consultoria</span><span class="case-chip">Financeiro</span></div>
-        <h3>Hash Rate Consultoria</h3>
-        <p>Consultoria financeira e contábil com foco em clareza e decisão — o lado boutique do meu trabalho de assessoria.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://autistaempreende.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div class="cat">Impacto Social</div>
-        <h3>Autista Empreende</h3>
-        <p>Iniciativa de impacto para o autista que empreende.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://mundo.elisaofiscal.net/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
-        <div class="cat">Global Tax Intelligence</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <div class="case-meta"><span class="case-chip">Global tax</span><span class="case-chip">Produto</span></div>
-        <h3>Mundial Tax</h3>
-        <p>Mapa-múndi interativo da tributação internacional — inteligência fiscal global em formato de produto.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://elisaofiscal.tax/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6M9 11h6M9 15h4"/><path d="M5 3h14a1 1 0 011 1v16a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z"/><circle cx="17.5" cy="6.5" r="3.5" fill="var(--bg)"/><path d="M16 6.5l1 1 2-2"/></svg></div>
-        <div class="cat">TaxTech · Elisão Fiscal</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <h3>A Hora da Elisão Fiscal</h3>
-        <div class="case-meta"><span class="case-chip">Reforma</span><span class="case-chip">Simulador</span><span class="case-chip">TaxTech</span></div>
-        <p>Compare regimes e a Reforma Tributária — anônimo, no navegador. Ferramenta de decisão para empresários e contadores.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      
-      <a class="card reveal" href="https://app.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">ContBit</span>
-        <div class="cat">Plataforma de atendimento</div>
-        <h3>App ContBit</h3>
-        <p>Portal de atendimento contábil — app.contbit.tax</p>
-        <span class="visit">Abrir</span>
-      </a>
-
-      <a class="card reveal" href="https://verificar.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">ContBit</span>
-        <div class="cat">Reforma Tributária · NF-e</div>
-        <h3>Verificador cClassTrib</h3>
-        <p>Valide o cClassTrib do XML da NF-e (IBS/CBS) grátis — verificar.contbit.tax</p>
-        <span class="visit">Abrir</span>
-      </a>
-
-      <a class="card reveal" href="https://nr1.abitante.net/" target="_blank" rel="noopener noreferrer">
-        <span class="flag">NR-1 · Inclusão</span>
-        <div class="cat">NeuroCompliance</div>
-        <h3>NeuroCompliance (nr1.abitante.net)</h3>
-        <p>Diagnóstico NR-1 e maturidade neuroinclusiva — anônimo, no navegador.</p>
-        <span class="visit">Abrir</span>
-      </a>
-
-      <a class="card reveal" href="https://mei.contbit.tax/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h4"/></svg></div>
-        <div class="cat">Simulador MEI · Inclusão</div>
-        <span class="builtby"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Construído pela ContBit</span>
-        <h3>Simulador Financeiro MEI</h3>
-        <p>Simule o dia a dia financeiro do MEI com objetividade.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://indigo-gba.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
-        <div class="cat">App · consoles</div>
-        <div class="case-meta"><span class="case-chip">1.7.0</span><span class="case-chip">Windows</span><span class="case-chip">Android</span></div>
-        <h3>Índigo</h3>
-        <p>Emulador 1.7, de 25/10/2026: Mega Drive, PC Engine e os consoles anteriores. Roda no navegador e baixa para Windows e Android.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://deck.joaoabitante.net/" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="16" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/></svg></div>
-        <div class="cat">Pokémon TCG</div>
-        <div class="case-meta"><span class="case-chip">Standard</span><span class="case-chip">Expanded</span><span class="case-chip">Meta diário</span></div>
-        <h3>Deck Pokémon TCG</h3>
-        <p>Monte e valide decks de Pokémon TCG. O meta é atualizado todo dia.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-      <a class="card reveal" href="https://copa.abitante.net" target="_blank" rel="noopener noreferrer">
-        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z"/></svg></div>
-        <div class="cat">Sports Analytics</div>
-        <h3>Copa 2026</h3>
-        <p>Experiência interativa da Copa — projeto de produto e conteúdo.</p>
-        <span class="visit">Abrir → <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-
-    </div>
   </div>
 </section>
+
 <section id="recomendacao" aria-labelledby="rec-title">
   <div class="container">
     <div class="section-head reveal">
