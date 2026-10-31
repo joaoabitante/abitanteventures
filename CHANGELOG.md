@@ -4,6 +4,18 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
+## [2026-10-31]
+### Removido
+- Hash Rate Consultoria: `hashrateconsultoria.com.br` não resolve mais no DNS.
+  Saiu do portfólio, do rodapé e do JSON-LD.
+- Deck Pokémon TCG: `deck.joaoabitante.net` não existe mais no DNS.
+  Saiu do portfólio, do rodapé, de `sites.html`, do `llms.txt` e dos dados estruturados.
+
+### Alterado
+- Índigo atualizado para o app **1.9.0** (31/10/2026): Sega CD, PC Engine CD,
+  Neo Geo CD e 32X, além dos consoles anteriores. Continua em
+  indigo-gba.vercel.app, no navegador e para Windows e Android.
+
 ## [2026-10-28]
 ### Alterado
 - Portfólio (`#projetos`) em dois blocos: trabalho (TaxTech, compliance e consultoria)

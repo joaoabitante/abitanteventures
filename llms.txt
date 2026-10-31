@@ -21,8 +21,7 @@
 - [NeuroCompliance NR-1](https://nr1.abitante.net/): Diagnóstico NR-1 e maturidade neuroinclusiva
 - [Copa 2026](https://copa.abitante.net/): Simulador interativo Copa 2026
 - [Abitante de Pallet](https://pallet.abitante.net/): Projeto Abitante de Pallet
-- [Índigo](https://indigo-gba.vercel.app/): Emulador 1.7 (25/10/2026), no navegador e em app para Windows e Android
-- [Deck Pokémon TCG](https://deck.joaoabitante.net/): Deck builder com meta atualizado diariamente
+- [Índigo](https://indigo-gba.vercel.app/): App 1.9.0 (31/10/2026) para Windows e Android, com Sega CD, PC Engine CD, Neo Geo CD, 32X e os consoles anteriores. Também abre no navegador.
 - [João Abitante Ventures](https://joao.abitante.net/): Hub profissional — Contador CRC-SP, TaxTech e IA
 
 ## Hubs para indexação
