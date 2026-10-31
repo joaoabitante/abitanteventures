@@ -10,17 +10,17 @@
 - Contato: joao.abitante.contabeis@gmail.com
 
 ## Sites e produtos (lista canônica)
-- [ContBit](https://contbit.tax/): Software e IA para contadores — SaaS e white-label
-- [App ContBit](https://app.contbit.tax/): Plataforma de atendimento contábil
-- [Verificador cClassTrib](https://verificar.contbit.tax/): Valide XML NF-e IBS/CBS gratuitamente
-- [Parcelamento Federal](https://parcelamento.contbit.tax/): Simulador anônimo Simples, MEI e PGFN
-- [Simulador MEI](https://mei.contbit.tax/): Simulador financeiro para empreendedores (MEI)
-- [A Hora da Elisão Fiscal](https://elisaofiscal.tax/): Simulador tributário anônimo — regimes e Reforma
-- [Mundial Tax](https://mundo.elisaofiscal.net/): Mapa tributário global interativo
-- [Prêmio Cripto](https://premio.elisaofiscal.net/): Arbitragem e prêmio de cripto entre exchanges
-- [NeuroCompliance NR-1](https://nr1.abitante.net/): Diagnóstico NR-1 e maturidade neuroinclusiva
-- [Copa 2026](https://copa.abitante.net/): Simulador interativo Copa 2026
-- [Abitante de Pallet](https://pallet.abitante.net/): Projeto Abitante de Pallet
+- [ContBit](https://contbit.tax/): Software sob medida para escritórios: portal com a marca do cliente, automações e sistemas, com IA e rigor fiscal
+- [App ContBit](https://app.contbit.tax/): Portal do cliente. A página no ar é uma demonstração (v0.9)
+- [Verificador cClassTrib](https://verificar.contbit.tax/): Confere o cClassTrib do XML da NF-e, NFC-e ou NFS-e. Grátis. Não é parecer
+- [Parcelamento Federal](https://parcelamento.contbit.tax/): Simples, MEI, PGFN, e-CAC e IRPF. Grátis, anônimo, SELIC do Banco Central
+- [Simulador MEI](https://mei.contbit.tax/): DAS, teto, sobra de caixa e saúde financeira. Grátis e anônimo
+- [A Hora da Elisão Fiscal](https://elisaofiscal.tax/): Pessoa Física, MEI, Simples, Lucro Presumido e Reforma 2026–2033. Anônimo
+- [Mundo da Elisão Fiscal](https://mundo.elisaofiscal.net/): Mapa da tributação internacional: renda, exterior, serviços, cripto, CRS e GAFI
+- [Prêmio Cripto](https://premio.elisaofiscal.net/): Bitcoin e USDT no Brasil contra o preço global. Spread, alerta e IR
+- [NeuroCompliance NR-1](https://nr1.abitante.net/): Diagnóstico da NR-1 e maturidade neuroinclusiva, com plano para o PGR
+- [Copa 2026](https://copa.abitante.net/): Encerrada em 19/07/2026: Espanha 1×0 Argentina. Resultados oficiais e simulador
+- [Abitante de Pallet](https://pallet.abitante.net/): Memórias de Pokémon TCG
 - [Índigo](https://indigo-gba.vercel.app/): App 1.9.0 (31/10/2026) para Windows e Android, com Sega CD, PC Engine CD, Neo Geo CD, 32X e os consoles anteriores. Também abre no navegador.
 - [João Abitante Ventures](https://joao.abitante.net/): Hub profissional — Contador CRC-SP, TaxTech e IA
 

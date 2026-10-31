@@ -15,6 +15,11 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 - Índigo atualizado para o app **1.9.0** (31/10/2026): Sega CD, PC Engine CD,
   Neo Geo CD e 32X, além dos consoles anteriores. Continua em
   indigo-gba.vercel.app, no navegador e para Windows e Android.
+- Textos dos outros produtos alinhados ao que cada site publica hoje: Contbit,
+  App (demo v0.9), Verificador (NF-e, NFC-e e NFS-e), Parcelamento, MEI, Elisão
+  (Reforma 2026–2033), Mundo da Elisão Fiscal (antes “Mundial Tax”), Prêmio Cripto,
+  NeuroCompliance, Autista Empreende, Copa 2026 (encerrada em 19/07/2026) e
+  Abitante de Pallet.
 
 ## [2026-10-28]
 ### Alterado
