@@ -21,7 +21,7 @@
 - [NeuroCompliance NR-1](https://nr1.abitante.net/): Diagnóstico da NR-1 e maturidade neuroinclusiva, com plano para o PGR
 - [Copa 2026](https://copa.abitante.net/): Encerrada em 19/07/2026: Espanha 1×0 Argentina. Resultados oficiais e simulador
 - [Abitante de Pallet](https://pallet.abitante.net/): Memórias de Pokémon TCG
-- [Índigo](https://indigo-gba.vercel.app/): App 1.9.0 (31/10/2026) para Windows e Android, com Sega CD, PC Engine CD, Neo Geo CD, 32X e os consoles anteriores. Também abre no navegador.
+- [Índigo Nexus](https://indigo.nexus/): App 2.0.0 (01/11/2026) para Windows e Android, grátis e de código aberto, com 30 consoles do Atari 2600 ao PlayStation. Também abre no navegador.
 - [João Abitante Ventures](https://joao.abitante.net/): Hub profissional — Contador CRC-SP, TaxTech e IA
 
 ## Hubs para indexação
