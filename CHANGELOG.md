@@ -12,9 +12,18 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
   Saiu do portfólio, do rodapé, de `sites.html`, do `llms.txt` e dos dados estruturados.
 
 ### Alterado
+- Índigo Nexus **2.0.0** (01/11/2026): o endereço canônico passou a ser
+  https://indigo.nexus/. O app para Windows e Android reúne 30 consoles,
+  do Atari 2600 ao PlayStation, grátis e de código aberto, e também abre
+  no navegador. O 3DO continua anunciado só para a versão 2.2.
 - Índigo atualizado para o app **1.9.0** (31/10/2026): Sega CD, PC Engine CD,
   Neo Geo CD e 32X, além dos consoles anteriores. Continua em
   indigo-gba.vercel.app, no navegador e para Windows e Android.
+- Textos dos outros produtos alinhados ao que cada site publica hoje: Contbit,
+  App (demo v0.9), Verificador (NF-e, NFC-e e NFS-e), Parcelamento, MEI, Elisão
+  (Reforma 2026–2033), Mundo da Elisão Fiscal (antes “Mundial Tax”), Prêmio Cripto,
+  NeuroCompliance, Autista Empreende, Copa 2026 (encerrada em 19/07/2026) e
+  Abitante de Pallet.
 
 ## [2026-10-28]
 ### Alterado
