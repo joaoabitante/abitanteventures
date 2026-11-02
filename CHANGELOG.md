@@ -19,6 +19,9 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
   instruções de GitHub Pages/Cloudflare Pages e o contador de visualizações, que
   não existe mais.
 - Comentário de segurança no `<head>` do `index.html` deixou de citar GitHub Pages.
+- Índigo Nexus está na **2.4.0** (02/11/2026), com 43 consoles e versão para Linux; o
+  portfólio, o diretório e o `llms.txt` diziam 2.0.0 com 30 consoles. Fonte: o próprio
+  repositório do Índigo (`web/changelog.js` e README).
 
 ## [2026-11-01]
 ### Alterado
