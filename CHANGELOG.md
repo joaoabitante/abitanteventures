@@ -4,6 +4,32 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
+## [2026-11-02]
+### Adicionado
+- `vercel.json` com os cabeçalhos HTTP de segurança (CSP, HSTS, `X-Frame-Options`,
+  `Referrer-Policy: no-referrer`, `Permissions-Policy`, COOP/CORP, nosniff). A Vercel
+  não lê o `_headers` (formato Cloudflare/Netlify): o site no ar só tinha a meta CSP
+  do documento. `i.html` e o arquivo de verificação do Google recebem `noindex`.
+
+### Alterado
+- `sitemap.xml` com `lastmod` de hoje (estava em 2026-07-24) e `sites.html` com a data
+  de atualização.
+- `README.md` reescrito para a hospedagem real (Vercel): lista completa de arquivos,
+  fluxo de publicação por PR, lugares que mudam juntos no portfólio. Saíram as
+  instruções de GitHub Pages/Cloudflare Pages e o contador de visualizações, que
+  não existe mais.
+- Comentário de segurança no `<head>` do `index.html` deixou de citar GitHub Pages.
+- Índigo Nexus está na **2.4.0** (02/11/2026), com 43 consoles e versão para Linux; o
+  portfólio, o diretório e o `llms.txt` diziam 2.0.0 com 30 consoles. Fonte: o próprio
+  repositório do Índigo (`web/changelog.js` e README).
+
+## [2026-11-01]
+### Alterado
+- Índigo Nexus **2.0.0** (01/11/2026): o endereço canônico passou a ser
+  https://indigo.nexus/. O app para Windows e Android reúne 30 consoles,
+  do Atari 2600 ao PlayStation, grátis e de código aberto, e também abre
+  no navegador. O 3DO continua anunciado só para a versão 2.2.
+
 ## [2026-10-31]
 ### Removido
 - Hash Rate Consultoria: `hashrateconsultoria.com.br` não resolve mais no DNS.
@@ -15,6 +41,11 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 - Índigo atualizado para o app **1.9.0** (31/10/2026): Sega CD, PC Engine CD,
   Neo Geo CD e 32X, além dos consoles anteriores. Continua em
   indigo-gba.vercel.app, no navegador e para Windows e Android.
+- Textos dos outros produtos alinhados ao que cada site publica hoje: Contbit,
+  App (demo v0.9), Verificador (NF-e, NFC-e e NFS-e), Parcelamento, MEI, Elisão
+  (Reforma 2026–2033), Mundo da Elisão Fiscal (antes “Mundial Tax”), Prêmio Cripto,
+  NeuroCompliance, Autista Empreende, Copa 2026 (encerrada em 19/07/2026) e
+  Abitante de Pallet.
 
 ## [2026-10-28]
 ### Alterado
