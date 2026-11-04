@@ -3,7 +3,7 @@
 > **Hospedagem:** **Vercel**, com deploy automático a cada push na `main`.
 > Cloudflare, se usada, é apenas DNS (proxy cinza). Este projeto **não** faz deploy no Cloudflare Workers/Pages.
 
-Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA. Desde 05/08/2026, **Analista Financeiro na Caldeira OTC**; atende como **PJ** pela Contbit na janela das **19h às 23h**, ao lado do contador **João Ricardo Abitante** (CRC-1SP 139213, [jrabitante.com.br](https://jrabitante.com.br/)).
+Site institucional / portfólio de **João Carlos Bueno Abitante** — contador CRC-SP com 10+ anos, TaxTech construído com IA. **Analista Financeiro na Urban** (entrou na Caldeira OTC em 05/08/2026; a Caldeira se fundiu com a Urban em outubro e a efetivação veio em 03/11/2026); atende como **PJ** pela Contbit na janela das **19h às 23h**, ao lado do contador **João Ricardo Abitante** (CRC-1SP 139213, [jrabitante.com.br](https://jrabitante.com.br/)).
 
 Posicionamento: vender o perfil para fintechs, escritórios e grandes empresas (compliance, tributário, produto TaxTech).
 
