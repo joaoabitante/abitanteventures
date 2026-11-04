@@ -6,6 +6,9 @@ Histórico anterior a este arquivo: ver commits do repositório e o README.
 
 ## [2026-11-04]
 ### Alterado
+- Foto nova, com a camisa da Urban, nas seções da contratação e Sobre (JPEG 400×400 embutido,
+  no lugar das duas fotos anteriores) e no painel direito da `og-image.png`. Legenda e `alt`
+  atualizados; `aspect-ratio` das duas molduras passa a 1/1.
 - Cargo atual: **Analista Financeiro na Urban**, efetivado em 03/11/2026. O Grupo Caldeira OTC
   se fundiu com a Urban (anúncio em 19/10/2026; a marca que fica é Urban) e a empresa
   protocolou em 28/10 o pedido de autorização como SPSAV no Banco Central. Atualizados

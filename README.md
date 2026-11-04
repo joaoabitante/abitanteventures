@@ -40,7 +40,7 @@ Cada push em outra branch gera um deploy de preview (protegido por login da Verc
 - **Portfólio:** cada produto aparece em quatro lugares — card em `#projetos` e JSON-LD de `index.html`, lista e JSON-LD de `sites.html`, e `llms.txt`. Mantenha os quatro iguais e ajuste o `numberOfItems` de `sites.html`.
 - **Cargo atual:** `#caldeira` (texto e `figcaption`), a faixa `.avail-banner` do hero, o badge em "Sobre" e o `worksFor`/`jobTitle` do JSON-LD `Person`.
 - **E-mail do formulário:** procure por `mailto:contbit@gmail.com` e ajuste se necessário.
-- **Trocar a foto:** a imagem está embutida em base64 dentro da tag `<img>` na seção "Sobre". Para trocar, gere o base64 da nova foto e substitua o conteúdo de `src`. O mesmo vale para a foto da seção `#caldeira` (`.nc-card .photo img`) — otimize antes (JPEG ~660 px de largura, qualidade 82) para não inflar o `index.html`.
+- **Trocar a foto:** a imagem está embutida em base64 dentro da tag `<img>` na seção "Sobre". Para trocar, gere o base64 da nova foto e substitua o conteúdo de `src`. O mesmo vale para a foto da seção `#caldeira` (`.nc-card .photo img`). Hoje as duas são a mesma foto quadrada (JPEG 400×400, qualidade 82); se trocar o formato, ajuste o `aspect-ratio` de `.photo img` e `.nc-card .photo img`. Otimize antes para não inflar o `index.html`.
 - **Datas:** ao mudar conteúdo, atualize o `lastmod` do `sitemap.xml`, o "Atualizado em" de `sites.html` e registre no `CHANGELOG.md`.
 
 ## Segurança e privacidade
