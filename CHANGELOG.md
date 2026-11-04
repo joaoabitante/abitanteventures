@@ -4,6 +4,15 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Histórico anterior a este arquivo: ver commits do repositório e o README.
 
+## [2026-11-04]
+### Alterado
+- Cargo atual: **Analista Financeiro na Urban**, efetivado em 03/11/2026. O Grupo Caldeira OTC
+  se fundiu com a Urban (anúncio em 19/10/2026; a marca que fica é Urban) e a empresa
+  protocolou em 28/10 o pedido de autorização como SPSAV no Banco Central. Atualizados
+  `<title>`, description, OpenGraph, Twitter, JSON-LD `Person` (`worksFor`, `jobTitle`),
+  faixa do hero, seção `#caldeira` (título, texto e três marcos novos na linha do tempo),
+  `#contratar`, Sobre, rodapé e README.
+
 ## [2026-11-02]
 ### Adicionado
 - `vercel.json` com os cabeçalhos HTTP de segurança (CSP, HSTS, `X-Frame-Options`,
